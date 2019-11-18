@@ -1,0 +1,6 @@
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\bin\Release\LogicLayer.exe
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\bin\Release\LogicLayer.pdb
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\obj\Release\LogicLayer.csprojAssemblyReference.cache
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\obj\Release\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\obj\Release\LogicLayer.exe
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\obj\Release\LogicLayer.pdb

@@ -1,0 +1,10 @@
+C:\Users\Dom\RiderProjects\CarRental\DataLayer\bin\Release\DataLayer.exe
+C:\Users\Dom\RiderProjects\CarRental\DataLayer\bin\Release\DataLayer.pdb
+C:\Users\Dom\RiderProjects\CarRental\DataLayer\bin\Release\System.Data.SQLite.dll
+C:\Users\Dom\RiderProjects\CarRental\DataLayer\bin\Release\System.Data.SQLite.xml
+C:\Users\Dom\RiderProjects\CarRental\DataLayer\bin\Release\System.Data.SQLite.dll.config
+C:\Users\Dom\RiderProjects\CarRental\DataLayer\obj\Release\DataLayer.csprojAssemblyReference.cache
+C:\Users\Dom\RiderProjects\CarRental\DataLayer\obj\Release\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Dom\RiderProjects\CarRental\DataLayer\obj\Release\DataLayer.csproj.CopyComplete
+C:\Users\Dom\RiderProjects\CarRental\DataLayer\obj\Release\DataLayer.exe
+C:\Users\Dom\RiderProjects\CarRental\DataLayer\obj\Release\DataLayer.pdb

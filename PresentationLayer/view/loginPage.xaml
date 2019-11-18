@@ -1,0 +1,56 @@
+﻿<Page x:Class="PresentationLayer.view.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PresentationLayer.view"
+      xmlns:vm="clr-namespace:PresentationLayer.viewModel"
+      xmlns:h="clr-namespace:PresentationLayer.helper"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LoginPage" Height="593">
+
+    <Page.Resources>
+        <vm:ViewModelMain x:Key="ViewModelMain"/>
+        <h:MyConverter x:Key="MyConverter"/>
+    </Page.Resources>
+
+    <Grid DataContext="{Binding Source={StaticResource ViewModelMain}}">
+        <Label Margin="189,182,522,359" Content="name:"/>
+
+        <TextBox x:Name="NameTextBox" Height="30" Margin="189,214.5,203,324.5"/>
+        <TextBox x:Name="SurnameTextBox" Height="30" Margin="189,298.5,203,240.5" Width="400"/>
+
+        <Button Margin="189,367.5,482,171.5" Content="sign in" Height="30" Command="{Binding LogInCommand, Source={StaticResource ViewModelMain}}">
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource MyConverter}">
+                    <Binding Path="Text" ElementName="NameTextBox"/>
+                    <Binding Path="Text" ElementName="SurnameTextBox"/>
+                </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
+
+        <Label Content="Label" HorizontalAlignment="Left" Height="3" Margin="-109,88,0,0" VerticalAlignment="Top" Width="5"/>
+        <Label Margin="189,266,522,275" Content="surname:"/>
+        <Label Margin="339,380,269,183" Content="&lt;alert&gt;"/>
+
+        <Button Margin="189,485.5,482,53.5" Content="sign up" Height="30" Command="{Binding LogInCommand, Source={StaticResource ViewModelMain}}">
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource MyConverter}">
+                    <Binding Path="Text" ElementName="NameTextBox"/>
+                    <Binding Path="Text" ElementName="SurnameTextBox"/>
+                </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
+
+        <Button Margin="44,485.5,627,53.5" Content="admin check" Height="30"
+            Command="{Binding LogInCommand, Source={StaticResource ViewModelMain}}">
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource MyConverter}">
+                    <Binding Path="Text" ElementName="NameTextBox"/>
+                    <Binding Path="Text" ElementName="SurnameTextBox"/>
+                </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
+    </Grid>
+</Page>

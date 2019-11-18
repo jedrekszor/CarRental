@@ -1,0 +1,12 @@
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\bin\Debug\LogicLayer.exe
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\bin\Debug\LogicLayer.pdb
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\obj\Debug\LogicLayer.exe
+C:\Users\Dom\RiderProjects\CarRental\LogicLayer\obj\Debug\LogicLayer.pdb
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\LogicLayer\bin\Debug\LogicLayer.exe
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\LogicLayer\bin\Debug\LogicLayer.pdb
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\LogicLayer\obj\Debug\LogicLayer.exe
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\LogicLayer\obj\Debug\LogicLayer.pdb

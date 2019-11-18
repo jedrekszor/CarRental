@@ -1,0 +1,14 @@
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\bin\Release\TestDatabase.dll
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\bin\Release\TestDatabase.pdb
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\bin\Release\DataLayer.exe
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\bin\Release\nunit.framework.dll
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\bin\Release\System.Data.SQLite.dll
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\bin\Release\DataLayer.pdb
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\bin\Release\System.Data.SQLite.xml
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\bin\Release\System.Data.SQLite.dll.config
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\bin\Release\nunit.framework.xml
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\obj\Release\TestDatabase.csprojAssemblyReference.cache
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\obj\Release\TestDatabase.csproj.CoreCompileInputs.cache
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\obj\Release\TestDatabase.csproj.CopyComplete
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\obj\Release\TestDatabase.dll
+C:\Users\Dom\RiderProjects\CarRental\TestDatabase\obj\Release\TestDatabase.pdb
