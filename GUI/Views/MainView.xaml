@@ -31,26 +31,20 @@
         <Button Content="Account" HorizontalAlignment="Left" Margin="692,90,0,0" VerticalAlignment="Top" Width="74" Command="{Binding GoToAccountCommand, Mode=OneWay}"/>
 
         <!--main functionalities-->
-        <Button Content="Rent car" HorizontalAlignment="Left" Margin="147,197,0,0" VerticalAlignment="Top" Width="160" Height="75" FontSize="16" BorderBrush="Black" Background="Gainsboro"/>
-        <Button Content="Return car" HorizontalAlignment="Left" Margin="322,197,0,0" VerticalAlignment="Top" Width="160" Height="75" FontSize="16" BorderBrush="Black" Background="#FFDEDEDE"/>
-        <Button Content="Report an accident" HorizontalAlignment="Left" Margin="496,197,0,0" VerticalAlignment="Top" Width="155" Height="75" FontSize="16" BorderBrush="Black"/>
+        <Button Content="Rent car" HorizontalAlignment="Left" Margin="147,225,0,0" VerticalAlignment="Top" Width="160" Height="47" FontSize="16" BorderBrush="Black" Background="Gainsboro" Command="{Binding GoToRentCommand, Mode=OneWay}"/>
+        <Button Content="Return car" HorizontalAlignment="Left" Margin="327,225,0,0" VerticalAlignment="Top" Width="160" Height="47" FontSize="16" BorderBrush="Black" Background="#FFDEDEDE" Command="{Binding GoToReturnCommand, Mode=OneWay}"/>
 
         <!--current order-->
-        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="214" Margin="147,288,0,0" Stroke="Black" VerticalAlignment="Top" Width="504"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="214" Margin="147,288,0,0" Stroke="Black" VerticalAlignment="Top" Width="507"/>
         <Label Content="Your current order" HorizontalAlignment="Left" Margin="157,298,0,0" VerticalAlignment="Top"/>
 
         <!--left panel-->
-        <Button Content="Contact us" HorizontalAlignment="Left" Margin="21,141,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="List of cars" HorizontalAlignment="Left" Margin="21,84,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GoToCarListCommand, Mode=OneWay}"/>
-        <Label Content="Serch for your best car:" HorizontalAlignment="Left" Margin="21,54,0,0" VerticalAlignment="Top"/>
+        <Button Content="List of cars" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GoToCarListCommand, Mode=OneWay}"/>
+        <Label Content="Serch for your best car:" HorizontalAlignment="Left" Margin="10,54,0,0" VerticalAlignment="Top"/>
         <Button Content="Admin panel" HorizontalAlignment="Left" Margin="692,120,0,0" VerticalAlignment="Top" Width="75"/>
 
         <!--logo-->
-        <Label Content="CarRetnal_" HorizontalAlignment="Left" Margin="308,68,0,0" VerticalAlignment="Top" FontSize="36"/>
-        <Label Content="application" HorizontalAlignment="Left" Margin="387,112,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Label Content="If you have any question:" HorizontalAlignment="Left" Margin="21,110,0,0" VerticalAlignment="Top"/>
-
-
-
+        <Label Content="CarRetnal_" HorizontalAlignment="Left" Margin="310,62,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="application" HorizontalAlignment="Left" Margin="389,106,0,0" VerticalAlignment="Top" FontSize="18"/>
     </Grid>
 </UserControl>
