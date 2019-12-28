@@ -10,12 +10,12 @@ namespace GUI.Controller
 {
     public static class CarsListConfig
     {
-        public static DbManager _manager = new DbManager();
+//        public static DbManager _manager = new DbManager();
         public static List<Car> _allCars;
 
         static CarsListConfig()
         {
-            _allCars = _manager.GetAllCars();
+            _allCars = DbManager.GetAllCars();
         }
 
         //public static List<Car> AllCars

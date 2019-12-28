@@ -72,7 +72,7 @@ namespace GUI.ViewModels
 
                 if (check)
                 {
-                    DbManager manager = new DbManager();
+                    //DbManager manager = new DbManager();
 
                     //manager.ClientIfExists znajduje zawsze klienta nawet jak nie istnieje
                     //wywali się error jak się doda tego samego klienta
@@ -96,8 +96,8 @@ namespace GUI.ViewModels
 
                         if (check)
                         {
-                            manager.UpdateClient(CurrentUserConfig.Id, name, surname, licNo, Int32.Parse(age));
-                            CurrentUserConfig.CurrentUser = manager.GetClient(CurrentUserConfig.Id);
+                            DbManager.UpdateClient(CurrentUserConfig.Id, name, surname, licNo, Int32.Parse(age));
+                            CurrentUserConfig.CurrentUser = DbManager.GetClient(CurrentUserConfig.Id);
                             MessageBox.Show("data updated!");
                         }
                     }

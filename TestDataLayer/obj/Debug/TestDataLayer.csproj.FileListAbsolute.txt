@@ -40,3 +40,17 @@ C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\TestDataLayer\obj\Debu
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\TestDataLayer\obj\Debug\TestDataLayer.csproj.CopyComplete
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\TestDataLayer\obj\Debug\TestDataLayer.dll
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\TestDataLayer\obj\Debug\TestDataLayer.pdb
+C:\Users\jedre\Documents\CarRental\TestDataLayer\bin\Debug\TestDataLayer.dll
+C:\Users\jedre\Documents\CarRental\TestDataLayer\bin\Debug\TestDataLayer.pdb
+C:\Users\jedre\Documents\CarRental\TestDataLayer\bin\Debug\DataLayer.exe
+C:\Users\jedre\Documents\CarRental\TestDataLayer\bin\Debug\nunit.framework.dll
+C:\Users\jedre\Documents\CarRental\TestDataLayer\bin\Debug\System.Data.SQLite.dll
+C:\Users\jedre\Documents\CarRental\TestDataLayer\bin\Debug\DataLayer.pdb
+C:\Users\jedre\Documents\CarRental\TestDataLayer\bin\Debug\System.Data.SQLite.xml
+C:\Users\jedre\Documents\CarRental\TestDataLayer\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\jedre\Documents\CarRental\TestDataLayer\bin\Debug\nunit.framework.xml
+C:\Users\jedre\Documents\CarRental\TestDataLayer\obj\Debug\TestDataLayer.csprojAssemblyReference.cache
+C:\Users\jedre\Documents\CarRental\TestDataLayer\obj\Debug\TestDataLayer.csproj.CoreCompileInputs.cache
+C:\Users\jedre\Documents\CarRental\TestDataLayer\obj\Debug\TestDataLayer.csproj.CopyComplete
+C:\Users\jedre\Documents\CarRental\TestDataLayer\obj\Debug\TestDataLayer.dll
+C:\Users\jedre\Documents\CarRental\TestDataLayer\obj\Debug\TestDataLayer.pdb

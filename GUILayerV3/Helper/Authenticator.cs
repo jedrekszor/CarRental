@@ -10,16 +10,16 @@ namespace GUILayerV3.Helper
 {
     public static class Authenticator
     {
-        private static DbManager manager = new DbManager();
+//        private static DbManager manager = new DbManager();
 
         public static bool Authenticate(string name, string surname)
         { 
-            return manager.ClientIfExists(name, surname);
+            return DbManager.ClientIfExists(name, surname);
         }
 
         public static Client GetClient(string name, string surname)
         {
-            return manager.GetClient(name, surname);
+            return DbManager.GetClient(name, surname);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace DataLayer.Data
 {
     public class Order : INotifyPropertyChanged
     {
-        private DbManager manager = new DbManager();
+        //private DbManager manager = new DbManager();
 
         private string _orderId;
         private Car _car;
@@ -64,7 +64,7 @@ namespace DataLayer.Data
                 _rentDate = value;
 
                 OnPropertyChanged(nameof(RentDate));
-                manager.UpdateOrder(_orderId, value, _returnDate, _price);
+                DbManager.UpdateOrder(_orderId, value, _returnDate, _price);
             }
         }
 
@@ -75,7 +75,7 @@ namespace DataLayer.Data
             {
                 _returnDate = value;
                 OnPropertyChanged(nameof(ReturnDate));
-                manager.UpdateOrder(_orderId, _rentDate, value, _price);
+                DbManager.UpdateOrder(_orderId, _rentDate, value, _price);
             }
         }
 
@@ -86,7 +86,7 @@ namespace DataLayer.Data
             {
                 _price = value;
                 OnPropertyChanged(nameof(Price));
-                manager.UpdateOrder(_orderId, _rentDate, _returnDate, value);
+                DbManager.UpdateOrder(_orderId, _rentDate, _returnDate, value);
             }
         }
         private string GeneratedId()

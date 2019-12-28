@@ -16,3 +16,9 @@ C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\LogicLayer\obj\Debug\L
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\LogicLayer\obj\Debug\LogicLayer.exe
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\LogicLayer\obj\Debug\LogicLayer.pdb
+C:\Users\jedre\Documents\CarRental\LogicLayer\bin\Debug\LogicLayer.exe
+C:\Users\jedre\Documents\CarRental\LogicLayer\bin\Debug\LogicLayer.pdb
+C:\Users\jedre\Documents\CarRental\LogicLayer\obj\Debug\LogicLayer.csprojAssemblyReference.cache
+C:\Users\jedre\Documents\CarRental\LogicLayer\obj\Debug\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\jedre\Documents\CarRental\LogicLayer\obj\Debug\LogicLayer.exe
+C:\Users\jedre\Documents\CarRental\LogicLayer\obj\Debug\LogicLayer.pdb

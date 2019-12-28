@@ -9,15 +9,15 @@ namespace GUI.Controller
 {
     public static class Authenticator
     {
-        private static DbManager manager = new DbManager();
+//        private static DbManager manager = new DbManager();
 
         public static bool Authenticate(string name, string surname)
         {
-            bool check = manager.ClientIfExists(name, surname);
+            bool check = DbManager.ClientIfExists(name, surname);
 
             if (check)
             {
-                CurrentUserConfig.CurrentUser = manager.GetClient(name, surname);
+                CurrentUserConfig.CurrentUser = DbManager.GetClient(name, surname);
                 return true;
             }
             else
@@ -26,10 +26,10 @@ namespace GUI.Controller
 
         public static void AdminAccess()
         {
-            bool check = manager.ClientIfExists("admin", "admin");
+            bool check = DbManager.ClientIfExists("admin", "admin");
             if (check)
             {
-                CurrentUserConfig.CurrentUser = manager.GetClient("admin", "admin");
+                CurrentUserConfig.CurrentUser = DbManager.GetClient("admin", "admin");
             }
             else
                 CurrentUserConfig.CurrentUser = new DataLayer.Data.Client("admin", "admin", "100000", 25);

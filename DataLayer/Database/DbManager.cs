@@ -11,16 +11,16 @@ using DataLayer.Data;
 
 namespace DataLayer.Database
 {
-     public class DbManager
+     public static class DbManager
     {
-        private readonly SQLiteConnection _myConnection;
+        private static readonly SQLiteConnection _myConnection;
 
-        private readonly string dbFile = "database.db";
-        private readonly string path = @".\database.db";
+        private static readonly string dbFile = "database.db";
+        private static readonly string path = @".\database.db";
 
         #region Constructors
 
-        public DbManager()
+        static DbManager()
         {
             _myConnection = new SQLiteConnection("Data Source=" + path);
             if (!File.Exists(path))
@@ -29,22 +29,11 @@ namespace DataLayer.Database
             }
             CreateTables();
         }
-
-        public DbManager(string path)
-        {
-            _myConnection = new SQLiteConnection("Data Source=" + path + dbFile);
-            if (!File.Exists(path + dbFile))
-            {
-                SQLiteConnection.CreateFile(path + dbFile);
-            }
-            CreateTables();
-        }
-
         #endregion
 
         #region ConnectionsAndSetUp
 
-        private void OpenConnection()
+        private static void OpenConnection()
         {
             if (_myConnection.State != System.Data.ConnectionState.Open)
             {
@@ -52,7 +41,7 @@ namespace DataLayer.Database
             }
         }
 
-        private void CloseConnection()
+        private static void CloseConnection()
         {
             if (_myConnection.State != System.Data.ConnectionState.Closed)
             {
@@ -61,7 +50,7 @@ namespace DataLayer.Database
         }
 
         //setting up the tables initially
-        private void CreateTables()
+        private static void CreateTables()
         {
             const string createCars = "CREATE TABLE IF NOT EXISTS cars(licenceNo varchar(255), brand varchar(255), model varchar(255), mileage integer, passengers integer, price float, primary key(licenceNo))";
             var makeCars = new SQLiteCommand(createCars, _myConnection);
@@ -87,7 +76,7 @@ namespace DataLayer.Database
         #region Adding
 
         //Adding car into database with given parameters
-        public void AddCar(string licenceNo, string brand, string model, int mileage, int passengers, float price)
+        public static void AddCar(string licenceNo, string brand, string model, int mileage, int passengers, float price)
         {
             const string query = "INSERT INTO cars('licenceNo', 'brand', 'model', 'mileage', 'passengers', 'price') VALUES(@licenceNo, @brand, @model, @mileage, @passengers, @price)";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -104,7 +93,7 @@ namespace DataLayer.Database
         }
 
         //Adding car into database with given object
-        public void AddCar(Car car)
+        public static void AddCar(Car car)
         {
             const string query = "INSERT INTO cars('licenceNo', 'brand', 'model', 'mileage', 'passengers', 'price') VALUES(@licenceNo, @brand, @model, @mileage, @passengers, @price)";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -125,7 +114,7 @@ namespace DataLayer.Database
         #region Removing
 
         //Removing car from database with given parameters
-        public void RemoveCar(string licenceNo)
+        public static void RemoveCar(string licenceNo)
         {
             const string query = "DELETE FROM cars WHERE licenceNo = @licenceNo";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -137,7 +126,7 @@ namespace DataLayer.Database
         }
 
         //Removing car from database with given object
-        public void RemoveCar(Car car)
+        public static void RemoveCar(Car car)
         {
             const string query = "DELETE FROM cars WHERE licenceNo = @licenceNo";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -152,7 +141,7 @@ namespace DataLayer.Database
 
         #region Updating
 
-        public void UpdateCar(string oldLicenceNo, string newBrand, string newModel, int newMileage, int newPassengers, float newPrice)
+        public static void UpdateCar(string oldLicenceNo, string newBrand, string newModel, int newMileage, int newPassengers, float newPrice)
         {
             const string query = "UPDATE cars SET brand = @newBrand, model = @newModel, mileage = @newMileage, passengers = @newPassengers, price = @newPrice WHERE licenceNo = @oldLicenceNo";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -172,7 +161,7 @@ namespace DataLayer.Database
 
         #region Counting
 
-        public int CountAllCars()
+        public static int CountAllCars()
         {
             const string query = "select count(*) from cars";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -189,7 +178,7 @@ namespace DataLayer.Database
 
         #region Getting
 
-        public Car GetCar(string licenceNo)
+        public static Car GetCar(string licenceNo)
         {
             const string query = "select * from cars where licenceNo = @licenceNo";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -214,7 +203,7 @@ namespace DataLayer.Database
             return car;
         }
 
-        public List<Car> GetAllCars()
+        public static List<Car> GetAllCars()
         {
             var cars = new List<Car>();
             const string query = "select * from cars";
@@ -250,7 +239,7 @@ namespace DataLayer.Database
         #region Adding
 
         //adding client with given parameters
-        public void AddClient(string id, string name, string surname, string licNo, int age)
+        public static void AddClient(string id, string name, string surname, string licNo, int age)
         {
             const string query = "INSERT INTO clients('clientId', 'name', 'surname', 'licNo', 'age') VALUES(@clientId, @name, @surname, @licNo, @age)";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -266,7 +255,7 @@ namespace DataLayer.Database
         }
 
         //adding client with given object
-        public void AddClient(Client client)
+        public static void AddClient(Client client)
         {
             const string query = "INSERT INTO clients('clientId', 'name', 'surname', 'licNo', 'age') VALUES(@clientId, @name, @surname, @licNo, @age)";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -286,7 +275,7 @@ namespace DataLayer.Database
         #region Removing
 
         //removing client form database with given parameter: clientId
-        public void RemoveClient(string clientId)
+        public static void RemoveClient(string clientId)
         {
             const string query = "DELETE FROM clients WHERE clientId = @clientId";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -298,7 +287,7 @@ namespace DataLayer.Database
         }
 
         //removing client form database with given object
-        public void RemoveClient(Client client)
+        public static void RemoveClient(Client client)
         {
             const string query = "DELETE FROM clients WHERE clientId = @clientId";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -313,7 +302,7 @@ namespace DataLayer.Database
 
         #region Updating
 
-        public void UpdateClient(Client client)
+        public static void UpdateClient(Client client)
         {
             const string query = "UPDATE clients SET name = @name, surname = @surname, licNo = @licNo, age = @age WHERE clientId = @clientId";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -328,7 +317,7 @@ namespace DataLayer.Database
             CloseConnection();
         }
 
-        public void UpdateClient(string clientId, string name, string surname, string licNo, int age)
+        public static void UpdateClient(string clientId, string name, string surname, string licNo, int age)
         {
             clientId = clientId.ToUpper();
             const string query = "UPDATE clients SET name = @name, surname = @surname, licNo = @licNo, age = @age WHERE clientId = @clientId";
@@ -348,7 +337,7 @@ namespace DataLayer.Database
 
         #region Counting
 
-        public int CountAllClients()
+        public static int CountAllClients()
         {
             const string query = "select count(*) from clients";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -364,7 +353,7 @@ namespace DataLayer.Database
 
         #region Getting
 
-        public Client GetClient(string clientId)
+        public static Client GetClient(string clientId)
         {
             clientId = clientId.ToUpper();
             const string query = "select * from clients where clientId = @clientId";
@@ -389,7 +378,7 @@ namespace DataLayer.Database
             return client;
         }
 
-        public Client GetClient(string name, string surname)
+        public static Client GetClient(string name, string surname)
         {
             const string query = "select * from clients where name = @v_name and surname = @v_surname";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -414,7 +403,7 @@ namespace DataLayer.Database
             return client;
         }
 
-        public bool ClientIfExists(string name, string surname)
+        public static bool ClientIfExists(string name, string surname)
         {
             const string query = "select * from clients where exists (select * from clients where name = @v_name and surname = @v_surname)";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -433,7 +422,7 @@ namespace DataLayer.Database
             return check;
         }
 
-        public bool ClientIfExistsId(Client client)
+        public static bool ClientIfExistsId(Client client)
         {
             const string query = "select * from clients where exists (select * from clients where clientId = @v_clientId)";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -459,7 +448,7 @@ namespace DataLayer.Database
 
         #region Adding
 
-        public void AddOrder(Order order)
+        public static void AddOrder(Order order)
         {
             const string query = "INSERT INTO orders('orderId', 'clientId', 'carId', 'price', 'rentDate', 'returnDate') VALUES(@orderId, @clientId, @carId, @price, @rentDate, @returnDate)";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -484,7 +473,7 @@ namespace DataLayer.Database
         #region Removing
 
         //removing order by given parameter: orderId
-        public void RemoveOrder(string orderId)
+        public static void RemoveOrder(string orderId)
         {
             const string query = "DELETE FROM orders WHERE orderId = @orderId";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -496,7 +485,7 @@ namespace DataLayer.Database
         }
 
         //removing order by given object
-        public void RemoveOrder(Order order)
+        public static void RemoveOrder(Order order)
         {
             const string query = "DELETE FROM orders WHERE orderId = @orderId";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -511,7 +500,7 @@ namespace DataLayer.Database
 
         #region Counting
 
-        public int CountAllOrders()
+        public static int CountAllOrders()
         {
             const string query = "select count(*) from orders";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -527,7 +516,7 @@ namespace DataLayer.Database
 
         #region Getting
 
-        public Order GetOrder(string orderId)
+        public static Order GetOrder(string orderId)
         {
             const string query = "select * from orders where orderId = @orderId";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -561,7 +550,7 @@ namespace DataLayer.Database
 
         #region Updating
 
-        public void UpdateOrder(string orderId, DateTime rentDate, DateTime returnDate, float price)
+        public static void UpdateOrder(string orderId, DateTime rentDate, DateTime returnDate, float price)
         {
             const string query = "UPDATE orders SET rentDate = @v_rentDate, returnDate = @v_returnDate, price = @v_price WHERE orderId = @v_orderId";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -583,7 +572,7 @@ namespace DataLayer.Database
 
         #region dataLogic
 
-        public bool IfNotOccupied(Car car)
+        public static bool IfNotOccupied(Car car)
         {
             const string query = "select * from orders where exists (select * from orders where carId = @v_carId)";
             var myCommand = new SQLiteCommand(query, _myConnection);
@@ -601,7 +590,7 @@ namespace DataLayer.Database
             return check;
         }
 
-        public bool IfNotOccupied(Client client)
+        public static bool IfNotOccupied(Client client)
         {
             const string query = "select * from orders where exists (select * from orders where clientId = @v_clientId)";
             var myCommand = new SQLiteCommand(query, _myConnection);

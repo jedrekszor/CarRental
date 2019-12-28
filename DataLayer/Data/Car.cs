@@ -12,7 +12,7 @@ namespace DataLayer.Data
         private int _passengers;
         private float _price;
 
-        private readonly DbManager manager = new DbManager();
+        //private readonly DbManager manager = new DbManager();
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -43,7 +43,7 @@ namespace DataLayer.Data
             {
                 _mileage = value;
                 OnPropertyChanged(nameof(Mileage));
-                manager.UpdateCar(_licenceNo, _brand, _model, value, _passengers, _price);
+                DbManager.UpdateCar(_licenceNo, _brand, _model, value, _passengers, _price);
             }
         }
 
@@ -59,7 +59,7 @@ namespace DataLayer.Data
             {
                 _price = value;
                 OnPropertyChanged(nameof(Price));
-                manager.UpdateCar(_licenceNo, _brand, _model, _mileage, _passengers, value);
+                DbManager.UpdateCar(_licenceNo, _brand, _model, _mileage, _passengers, value);
             }
         }
 
