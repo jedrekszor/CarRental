@@ -1,6 +1,6 @@
-﻿using PresentationLayer.view;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,43 +9,37 @@ using System.Windows.Controls;
 
 namespace PresentationLayer.helper
 {
-    enum ApplicationPage
+    public class ApplicationController
     {
-        LoginPage,
-        MainPage,
-    }
-
-    //class used to switch between pages (in progress)
-    class ApplicationController
-    {
-        static ApplicationController _instance;
-        public static ApplicationController GetInstance()
+        public ApplicationController(ApplicationPage page)
         {
-            if (_instance == null)
-                _instance = new ApplicationController();
-            return _instance;
+            GoToPage(page);
         }
 
-        Border _stage;
+        public int SwitchView { get; set; }
 
-        private ApplicationController() { }
 
-        public void GoToPage(ApplicationPage page)
+        private void GoToPage(ApplicationPage page)
         {
             switch (page)
             {
                 case ApplicationPage.LoginPage:
-                    _stage.Child = new LoginPage();
+                    SwitchView = (int)ApplicationPage.LoginPage;
                     break;
                 case ApplicationPage.MainPage:
-                    _stage.Child = new MainPage();
+                    SwitchView = (int)ApplicationPage.MainPage;
+                    break;
+                case ApplicationPage.ClientPage:
+                    SwitchView = (int)ApplicationPage.ClientPage;
                     break;
             }
         }
-
-        public void SetStage(Border Stage)
-        {
-            _stage = Stage;
-        }
     }
-}
+
+    public enum ApplicationPage
+    {
+        LoginPage = 0,
+        MainPage = 1,
+        ClientPage = 2,
+    }
+}  

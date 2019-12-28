@@ -1,0 +1,15 @@
+﻿<Application x:Class="GUILayerV4.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GUILayerV4"
+             xmlns:page="clr-namespace:GUILayerV4.Views.Pages"
+             xmlns:vmodel="clr-namespace:GUILayerV4.ViewModels.PageViewModels">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type vmodel:LoginViewModel}">
+            <page:LoginView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vmodel:MainViewModel}">
+            <page:MainView />
+        </DataTemplate>
+    </Application.Resources>
+</Application>

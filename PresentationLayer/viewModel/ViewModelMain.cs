@@ -1,66 +1,37 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Controls;
-using DataLayer.Data;
-using PresentationLayer.helper;
-using PresentationLayer.viewModel.commands;
+﻿using PresentationLayer.model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace PresentationLayer.viewModel
 {
-    public class ViewModelMain : ViewModelBase
+    class ViewModelMain : ViewModelBase
     {
-        //Pages flags
-        public bool LoginVisibility { get; set; }
 
-
-        //Client info
-        private Client _currentUser;
-        public Client CurrentUser
-        {
-            get { return _currentUser; }
-            set
-            {
-                _currentUser = value;
-                OnPropertyChanged(nameof(CurrentUser));
-            }
-        }
-
-
-        //View model classes
-        private ViewModelLogin ViewModelLogin { get; set; }
-
-
-        //ICommands
-        public ChangeTextCommand ChangeTextCommand { get; set; }
-        public LogInCommand LogInCommand { get; set; }
-
+        public string Text = "DUPA";
 
         public ViewModelMain()
         {
-            this.ChangeTextCommand = new ChangeTextCommand(this);
-            this.LogInCommand = new LogInCommand(this);
-
-            ViewModelLogin = new ViewModelLogin(this);
-  
-            CurrentUser = new Client();
-
-            LoginVisibility = true;
-        }
-        
-        //Commands methods
-        public void ChangeTextMethod(object parameter)
-        {
-            var values = (object[])parameter;
-            CurrentUser.Name = (string)values[0];
-            CurrentUser.Surname = (string)values[1];
+            LoadHomePage();
         }
 
-        public void LogInMethod(object parameter)
+        private ViewModelBase _currentViewModel;
+        public ViewModelBase CurrentViewModel
         {
-            ViewModelLogin.LogButtonClick(parameter);
+            get { return _currentViewModel; }
+            set
+            {
+                _currentViewModel = value;
+                this.OnPropertyChanged(nameof(CurrentViewModel));
+            }
+        }
 
-            LoginVisibility = false;
-            OnPropertyChanged(nameof(LoginVisibility));
+        //Methods:
+        private void LoadHomePage()
+        {
+            CurrentViewModel = new ViewModelHome(new HomePage() { PageTitle = "This is the Home Page." });
         }
     }
 }

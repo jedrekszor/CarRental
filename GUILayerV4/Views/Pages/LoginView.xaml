@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="GUILayerV4.Views.Pages.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUILayerV4.Views.Pages"
+             xmlns:vmodel="clr-namespace:GUILayerV4.ViewModels"
+             xmlns:help="clr-namespace:GUILayerV4.Helper"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <vmodel:MainWindowViewModel x:Key="MainModel"/>
+        <help:ParamConverter x:Key="ParamConverter"/>
+    </UserControl.Resources>
+
+    <Grid Background="Wheat">
+        <Label Content="{Binding CurrentUser.Name, Source={StaticResource MainModel}}" HorizontalAlignment="Left" Margin="615,25,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding CurrentUser.Surname, Source={StaticResource MainModel}}" HorizontalAlignment="Left" Margin="615,56,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding ClientInfo, Source={StaticResource MainModel}}" HorizontalAlignment="Left" Margin="615,87,0,0" VerticalAlignment="Top"/>
+
+        <Button Content="Log in" HorizontalAlignment="Left" Margin="357,345,0,0" VerticalAlignment="Top" Width="75" Command="{Binding LoginPage.GoHomePage, Source={StaticResource MainModel}}">
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource ParamConverter}">
+                    <Binding ElementName="NameTextBox" Path="Text"/>
+                    <Binding ElementName="SurnameTextBox" Path="Text"/>
+                </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
+        <Button Content="Test" HorizontalAlignment="Left" Margin="621,345,0,0" VerticalAlignment="Top" Width="75" Command="{Binding LoginPage.Test, Source={StaticResource MainModel}}">
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource ParamConverter}">
+                    <Binding ElementName="NameTextBox" Path="Text"/>
+                    <Binding ElementName="SurnameTextBox" Path="Text"/>
+                </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
+
+        <TextBox x:Name="NameTextBox" HorizontalAlignment="Left" Height="23" Margin="278,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
+        <TextBox x:Name="SurnameTextBox" HorizontalAlignment="Left" Height="23" Margin="278,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="230"/>
+
+    </Grid>
+</UserControl>

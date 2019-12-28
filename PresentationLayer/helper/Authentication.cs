@@ -22,7 +22,10 @@ namespace PresentationLayer.helper
 
         public static Client GetAuthenticatedClient(string name, string surname)
         {
-            manager.AddClient(new Client(name, surname, "111101", 25));
+            Client client = new Client(name, surname, "111101", 25);
+
+            manager.RemoveClient(client);
+            manager.AddClient(client);
             return Manager.GetClient(name, surname);
         }
     }

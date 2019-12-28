@@ -1,0 +1,38 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        xmlns:vmodel ="clr-namespace:GUI.ViewModels"
+        xmlns:view ="clr-namespace:GUI.Views"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vmodel:LoginViewModel}">
+            <view:LoginView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vmodel:MainViewModel}">
+            <view:MainView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vmodel:NewUserViewModel}">
+            <view:NewUserView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vmodel:AccountViewModel}">
+            <view:AccountView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vmodel:CarListViewModel}">
+            <view:CarListView/>
+        </DataTemplate>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <vmodel:WindowViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <ContentControl Content="{Binding CurrentView}"/>
+    </Grid>
+</Window>

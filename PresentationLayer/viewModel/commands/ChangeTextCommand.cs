@@ -5,11 +5,11 @@ namespace PresentationLayer.viewModel.commands
 {
     public class ChangeTextCommand : ICommand
     {
-        private ViewModelMain ViewModelMain { get; set; }
+        //private ViewModelMain ViewModelMain { get; set; }
 
-        public ChangeTextCommand(ViewModelMain viewModelMain)
+        public ChangeTextCommand()
         {
-            ViewModelMain = viewModelMain;
+            //ViewModelMain = viewModelMain;
         }
 
         public bool CanExecute(object parameter)
@@ -19,7 +19,7 @@ namespace PresentationLayer.viewModel.commands
 
         public void Execute(object parameter)
         {
-            this.ViewModelMain.ChangeTextMethod(parameter);
+            //this.ViewModelMain.ChangeTextMethod(parameter);
         }
 
         public event EventHandler CanExecuteChanged;

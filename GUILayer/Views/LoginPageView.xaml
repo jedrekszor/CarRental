@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="GUILayer.Views.LoginPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUILayer.Views"
+             xmlns:p="clr-namespace:GUILayer.Pages"
+             xmlns:vm="clr-namespace:GUILayer.ViewModels.SubVMs"
+             xmlns:vmb="clr-namespace:GUILayer.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="600" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <vmb:MainWindowViewModel x:Key="MainWindowViewModel"/>
+        <p:LoginPage x:Key="LoginPage"/>
+    </UserControl.Resources>
+
+
+    <Grid DataContext="{Binding Source={StaticResource MainWindowViewModel}}" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="97*"/>
+            <RowDefinition Height="103*"/>
+        </Grid.RowDefinitions>
+        
+        <Button Command="{Binding LoadHomePageCommand}" Content="Button" HorizontalAlignment="Left" Margin="367,214.571,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1"/>
+
+        <Label Content="Label" HorizontalAlignment="Left" Margin="288,19.571,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="288,102.571,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="288,69.571,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="288,153.571,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
+        
+        <Label Content="{Binding LoginPageViewModel.Model.PageTitle}" HorizontalAlignment="Left" Margin="288,145,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</UserControl>

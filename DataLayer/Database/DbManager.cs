@@ -214,6 +214,33 @@ namespace DataLayer.Database
             return car;
         }
 
+        public List<Car> GetAllCars()
+        {
+            var cars = new List<Car>();
+            const string query = "select * from cars";
+            var myCommand = new SQLiteCommand(query, _myConnection);
+
+            Car car = null;
+
+            OpenConnection();
+            var r = myCommand.ExecuteReader();
+
+            while (r.Read())
+            {
+                car = new Car(Convert.ToString(r["licenceNo"]),
+                    Convert.ToString(r["brand"]),
+                    Convert.ToString(r["model"]),
+                    Convert.ToInt32(r["mileage"]),
+                    Convert.ToInt32(r["passengers"]),
+                    Convert.ToSingle(r["price"]));
+
+                cars.Add(car);
+            }
+            CloseConnection();
+
+            return cars;
+        }
+
         #endregion
 
         #endregion
@@ -286,8 +313,24 @@ namespace DataLayer.Database
 
         #region Updating
 
+        public void UpdateClient(Client client)
+        {
+            const string query = "UPDATE clients SET name = @name, surname = @surname, licNo = @licNo, age = @age WHERE clientId = @clientId";
+            var myCommand = new SQLiteCommand(query, _myConnection);
+            myCommand.Parameters.AddWithValue("@clientId", client.Id.ToUpper());
+            myCommand.Parameters.AddWithValue("@name", client.Name);
+            myCommand.Parameters.AddWithValue("@surname", client.Surname);
+            myCommand.Parameters.AddWithValue("@licNo", client.LicNo);
+            myCommand.Parameters.AddWithValue("@age", client.Age);
+
+            OpenConnection();
+            myCommand.ExecuteNonQuery();
+            CloseConnection();
+        }
+
         public void UpdateClient(string clientId, string name, string surname, string licNo, int age)
         {
+            clientId = clientId.ToUpper();
             const string query = "UPDATE clients SET name = @name, surname = @surname, licNo = @licNo, age = @age WHERE clientId = @clientId";
             var myCommand = new SQLiteCommand(query, _myConnection);
             myCommand.Parameters.AddWithValue("@clientId", clientId);
@@ -323,6 +366,7 @@ namespace DataLayer.Database
 
         public Client GetClient(string clientId)
         {
+            clientId = clientId.ToUpper();
             const string query = "select * from clients where clientId = @clientId";
             var myCommand = new SQLiteCommand(query, _myConnection);
             myCommand.Parameters.AddWithValue("@clientId", clientId);

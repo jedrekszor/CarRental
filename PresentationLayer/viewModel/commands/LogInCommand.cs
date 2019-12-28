@@ -5,11 +5,11 @@ namespace PresentationLayer.viewModel.commands
 {
     public class LogInCommand : ICommand
     {
-        private ViewModelMain VMmain { get; set; }
+        //private ViewModelMain VMmain { get; set; }
         
-        public LogInCommand(ViewModelMain vmm)
+        public LogInCommand()
         {
-            VMmain = vmm;
+            //VMmain = vmm;
         }
         
         public bool CanExecute(object parameter)
@@ -19,7 +19,7 @@ namespace PresentationLayer.viewModel.commands
 
         public void Execute(object parameter)
         {
-           this.VMmain.LogInMethod(parameter);
+           //this.VMmain.LogInMethod(parameter);
         }
 
         public event EventHandler CanExecuteChanged;

@@ -1,0 +1,58 @@
+﻿<UserControl x:Class="GUI.Views.NewUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GUI.Views"
+             xmlns:vmodel ="clr-namespace:GUI.ViewModels"
+             xmlns:help="clr-namespace:GUI.Helper"
+             mc:Ignorable="d" 
+             Height="550" Width="790">
+
+    <UserControl.Resources>
+        <help:ParamConverter x:Key="ParamConverter"/>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <vmodel:NewUserViewModel/>
+    </UserControl.DataContext>
+    
+    <Grid Background="White" >
+       
+        <!--title-->
+        <Label Content="{Binding Title}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+
+        <!--adding credentials-->
+        <Label Content="name" HorizontalAlignment="Left" Margin="135,213,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.275,0.538"/>
+        <TextBox x:Name="nameTextBox" HorizontalAlignment="Left" Height="22" Margin="183,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <Label Content="surname" HorizontalAlignment="Left" Margin="121,251,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="surnameTextBox" HorizontalAlignment="Left" Height="22" Margin="183,255,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <Label Content="licence no" HorizontalAlignment="Left" Margin="114,287,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="licNoTextBox" HorizontalAlignment="Left" Height="22" Margin="183,291,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+        <Label Content="age" HorizontalAlignment="Left" Margin="148,321,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="ageTextBox" HorizontalAlignment="Left" Height="22" Margin="183,325,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="200"/>
+
+        <!--buttons-->
+        <Button Content="Submit" HorizontalAlignment="Left" Margin="234,435,0,0" VerticalAlignment="Top" Width="75" Command="{Binding SubmitCommand, Mode=OneWay}">
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource ParamConverter}">
+                    <Binding ElementName="nameTextBox" Path="Text"/>
+                    <Binding ElementName="surnameTextBox" Path="Text"/>
+                    <Binding ElementName="licNoTextBox" Path="Text"/>
+                    <Binding ElementName="ageTextBox" Path="Text"/>
+                </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
+        <Button Content="Go back" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GoToMainCommand, Mode=OneWay}"/>
+
+        <!--policy-->
+        <CheckBox Content="I agree with company policy" HorizontalAlignment="Left" Margin="422,420,0,0" VerticalAlignment="Top" IsChecked="{Binding CheckBox1}"/>
+        <CheckBox Content="Yes, yes ... I am responsible person" HorizontalAlignment="Left" Margin="422,440,0,0" VerticalAlignment="Top" IsChecked="{Binding CheckBox2}"/>
+        <TextBlock HorizontalAlignment="Left" Height="257" Margin="422,165,0,0" TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor odio vel ex dictum facilisis. Praesent nisl orci, laoreet in sem ac, iaculis efficitur lacus. Sed vehicula erat vel ipsum lobortis viverra. Nulla id tempus magna. Nullam faucibus augue a augue convallis interdum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut tempor scelerisque metus. Quisque ut erat consequat, vulputate metus vitae, facilisis nunc. Donec sit amet porta leo, sed aliquam lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus id mauris purus. Integer commodo dui vitae tellus faucibus interdum quis eget turpis. Fusce quis gravida purus. Aliquam ut massa nec lorem vestibulum scelerisque." VerticalAlignment="Top" Width="294" TextAlignment="Justify"/>
+
+        <Label Content="{Binding Alert}" HorizontalAlignment="Left" Margin="137,396,0,0" VerticalAlignment="Top"/>
+        <Label Content="CarRetnal_" HorizontalAlignment="Left" Margin="316,47,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="application" HorizontalAlignment="Left" Margin="395,91,0,0" VerticalAlignment="Top" FontSize="18"/>
+
+    </Grid>
+</UserControl>

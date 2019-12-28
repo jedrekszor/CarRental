@@ -1,0 +1,32 @@
+﻿ public Authentication Authentication { get; set; }
+        public ViewModelMain ViewModelMain { get; set; }
+        public Client CurrentUser { get; set; }
+        public LoginPage Page { get; private set; }
+   
+
+        public ViewModelLogin(ViewModelMain viewModelMain, LoginPage page)
+        {
+            Page = page;
+            ViewModelMain = viewModelMain;
+            Authentication = new Authentication();
+        }
+
+        public void LogButtonClick(object parameter)
+        {
+            var values = (object[])parameter;
+
+            var userName = (string)values[0];
+            var userSurname = (string)values[1];
+
+            if (Authentication.Authenticate(userName, userSurname))
+            {
+                //tutaj getClient z database
+                ViewModelMain.CurrentUser = Authentication.GetAuthenticatedClient(userName, userSurname);
+            }
+        }
+
+        public void LogButtonClickAdmin()
+        {
+            //tutaj od razu nowy
+            ViewModelMain.CurrentUser = new Client("Admin", "Admin", "11111", 25);
+        }
