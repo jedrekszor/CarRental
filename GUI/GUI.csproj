@@ -97,8 +97,9 @@
     <Compile Include="PageContents\LoginPage.cs" />
     <Compile Include="PageContents\MainPage.cs" />
     <Compile Include="ViewModels\AccountViewModel.cs" />
-    <Compile Include="ViewModels\AddCarViewModel.cs" />
+    <Compile Include="ViewModels\RentCarViewModel.cs" />
     <Compile Include="ViewModels\CarListViewModel.cs" />
+    <Compile Include="ViewModels\ContactUsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Helper\PropertyMonitor.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -109,6 +110,9 @@
     </Compile>
     <Compile Include="Views\CarListView.xaml.cs">
       <DependentUpon>CarListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactUsView.xaml.cs">
+      <DependentUpon>ContactUsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -147,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CarListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContactUsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -17,6 +17,7 @@ namespace GUI.ViewModels
         private object _newUserView = new NewUserView();
         private object _accountView = new AccountView();
         private object _carListView = new CarListView();
+        private object _carRentView = new RentCarView();
 
         private object _currentView;
 
@@ -27,6 +28,7 @@ namespace GUI.ViewModels
             Mediator.Register("toNewUser", LoadNewUserView);
             Mediator.Register("toAccount", LoadAccountView);
             Mediator.Register("toCarList", LoadCarListView);
+            Mediator.Register("toRent", LoadRentCarView);
 
             Mediator.NotifyColleagues("toLogin", true);
         }
@@ -67,6 +69,11 @@ namespace GUI.ViewModels
         public void LoadCarListView(object o)
         {
             CurrentView = _carListView;
+        }
+
+        public void LoadRentCarView(object o)
+        {
+            CurrentView = _carRentView;
         }
     }
 }

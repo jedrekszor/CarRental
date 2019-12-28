@@ -13,14 +13,10 @@ namespace GUI.ViewModels
     public class CarListViewModel : PropertyMonitor
     {
         private string _title;
-        private List<Car> _cars;
-        private DbManager _manager;
 
         public CarListViewModel()
         {
-            _manager = new DbManager(@"C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\bin\Debug\");
             Title = "Car list screen";
-            Cars = _manager.GetAllCars();
             GoToHomeCommand = new RelayCommand(o => GoHome(o));
         }
 
@@ -32,15 +28,6 @@ namespace GUI.ViewModels
             {
                 _title = value;
                 OnPropertyChanged(nameof(Title));
-            }
-        }
-        public List<Car> Cars
-        {
-            get => _cars;
-            set
-            {
-                _cars = value;
-                OnPropertyChanged(nameof(Cars));
             }
         }
 

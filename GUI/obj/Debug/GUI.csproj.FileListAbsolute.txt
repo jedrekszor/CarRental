@@ -40,3 +40,11 @@ C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\bin\Debug\EntityFr
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\bin\Debug\System.Data.SQLite.EF6.dll
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\bin\Debug\EntityFramework.xml
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\obj\Debug\Views\RentCarView.g.cs
+C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\obj\Debug\Views\ReportAccidentView.g.cs
+C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\obj\Debug\Views\ReturnCarView.g.cs
+C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\obj\Debug\Views\RentCarView.baml
+C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\obj\Debug\Views\ReportAccidentView.baml
+C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\obj\Debug\Views\ReturnCarView.baml
+C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\obj\Debug\Views\ContactUsView.g.cs
+C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\obj\Debug\Views\ContactUsView.baml

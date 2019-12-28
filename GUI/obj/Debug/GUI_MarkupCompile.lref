@@ -1,4 +1,4 @@
-﻿C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
+﻿
 
 FC:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\MainWindow.xaml;;
 FC:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\Views\AccountView.xaml;;
@@ -6,4 +6,8 @@ FC:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\Views\CarListView
 FC:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\Views\LoginView.xaml;;
 FC:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\Views\MainView.xaml;;
 FC:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\Views\NewUserView.xaml;;
+FC:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\Views\RentCarView.xaml;;
+FC:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\Views\ReportAccidentView.xaml;;
+FC:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\Views\ReturnCarView.xaml;;
+FC:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\GUI\Views\ContactUsView.xaml;;
 

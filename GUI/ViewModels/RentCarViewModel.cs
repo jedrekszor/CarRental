@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GUI.ViewModels
 {
-    class AddCarViewModel
+    class RentCarViewModel
     {
     }
 }
