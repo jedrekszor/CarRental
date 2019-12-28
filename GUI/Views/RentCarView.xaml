@@ -13,7 +13,9 @@
     </UserControl.DataContext>
     
     <Grid Background="White">
-        <Label Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        
+        <Label Content="{Binding Title}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="Go back" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GoBackCommand, Mode=OneWay}"/>
 
     </Grid>
 </UserControl>

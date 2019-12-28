@@ -1,5 +1,4 @@
 ﻿using GUI.Helper;
-using GUI.PageContents;
 using GUI.Views;
 using System;
 using System.Collections.Generic;
@@ -18,6 +17,7 @@ namespace GUI.ViewModels
         private object _accountView = new AccountView();
         private object _carListView = new CarListView();
         private object _carRentView = new RentCarView();
+        private object _returnCarView = new ReturnCarView();
 
         private object _currentView;
 
@@ -29,6 +29,7 @@ namespace GUI.ViewModels
             Mediator.Register("toAccount", LoadAccountView);
             Mediator.Register("toCarList", LoadCarListView);
             Mediator.Register("toRent", LoadRentCarView);
+            Mediator.Register("toReturn", LoadReturnCarView);
 
             Mediator.NotifyColleagues("toLogin", true);
         }
@@ -46,34 +47,34 @@ namespace GUI.ViewModels
             }
         }
 
-        public void LoadHomeView(object o)
+        //methods changing current view
+        private void LoadHomeView(object o)
         {
             CurrentView = _mainView;
         }
-
-        public void LoadLoginView(object o)
+        private void LoadLoginView(object o)
         {
             CurrentView = _loginView;
         }
-
-        public void LoadNewUserView(object o)
+        private void LoadNewUserView(object o)
         {
             CurrentView = _newUserView;
         }
-
-        public void LoadAccountView(object o)
+        private void LoadAccountView(object o)
         {
             CurrentView = _accountView;
         }
-
-        public void LoadCarListView(object o)
+        private void LoadCarListView(object o)
         {
             CurrentView = _carListView;
         }
-
-        public void LoadRentCarView(object o)
+        private void LoadRentCarView(object o)
         {
             CurrentView = _carRentView;
+        }
+        private void LoadReturnCarView(object o)
+        {
+            CurrentView = _returnCarView;
         }
     }
 }

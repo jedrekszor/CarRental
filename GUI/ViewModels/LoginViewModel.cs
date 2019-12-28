@@ -7,7 +7,6 @@ using System.Windows;
 using System.Windows.Input;
 using GUI.Controller;
 using GUI.Helper;
-using GUI.PageContents;
 using LogicLayer;
 
 namespace GUI.ViewModels

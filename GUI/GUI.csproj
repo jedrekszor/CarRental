@@ -94,25 +94,20 @@
     <Compile Include="Helper\Mediator.cs" />
     <Compile Include="Helper\ParamConverter.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
-    <Compile Include="PageContents\LoginPage.cs" />
-    <Compile Include="PageContents\MainPage.cs" />
     <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\RentCarViewModel.cs" />
     <Compile Include="ViewModels\CarListViewModel.cs" />
-    <Compile Include="ViewModels\ContactUsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Helper\PropertyMonitor.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\NewUserViewModel.cs" />
+    <Compile Include="ViewModels\ReturnCarViewModel.cs" />
     <Compile Include="ViewModels\WindowViewModel.cs" />
     <Compile Include="Views\AccountView.xaml.cs">
       <DependentUpon>AccountView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CarListView.xaml.cs">
       <DependentUpon>CarListView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ContactUsView.xaml.cs">
-      <DependentUpon>ContactUsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -125,9 +120,6 @@
     </Compile>
     <Compile Include="Views\RentCarView.xaml.cs">
       <DependentUpon>RentCarView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ReportAccidentView.xaml.cs">
-      <DependentUpon>ReportAccidentView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReturnCarView.xaml.cs">
       <DependentUpon>ReturnCarView.xaml</DependentUpon>
@@ -154,10 +146,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\ContactUsView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,10 +159,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\RentCarView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\ReportAccidentView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

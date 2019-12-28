@@ -26,6 +26,12 @@
         <DataTemplate DataType="{x:Type vmodel:CarListViewModel}">
             <view:CarListView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vmodel:RentCarViewModel}">
+            <view:RentCarView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vmodel:ReturnCarViewModel}">
+            <view:ReturnCarView/>
+        </DataTemplate>
     </Window.Resources>
 
     <Window.DataContext>

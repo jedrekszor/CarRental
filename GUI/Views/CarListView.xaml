@@ -12,22 +12,21 @@
     <UserControl.DataContext>
         <vmodel:CarListViewModel/>
     </UserControl.DataContext>
-    
+
     <Grid Background="White">
         <Button Content="Go back" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top" Width="76" Command="{Binding GoToHomeCommand, Mode=OneWay}"/>
         <Label Content="{Binding Title}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <ItemsControl  Margin="20,54,24,50" ItemsSource="{Binding Cars}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <Border BorderBrush="Black" BorderThickness="1" Margin="5" Padding="2">
-                        <StackPanel Orientation="Vertical">
-                            <TextBlock Text="{Binding  Brand}"/>
-                            <TextBlock Text="{Binding  Model}"/>
-                        </StackPanel>
-                    </Border>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
+
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Stroke="Black" Width="746" Margin="20,106,0,50"></Rectangle>
+
+        <ItemsControl  Margin="37,123,45,68">
         </ItemsControl>
+        
         <Label Content="{Binding Title}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.013,0.135"/>
+        
+        <Label Content="Below are presented all cars available in our company." HorizontalAlignment="Left" Margin="20,62,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mind that some of them can be occupied now. If you want to see cars ready to be rent, go to 'Rent car' Section" HorizontalAlignment="Left" Margin="20,75,0,0" VerticalAlignment="Top"/>
+        
+        <Button Content="Rent Car" HorizontalAlignment="Left" Margin="691,78,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GoToRentCarCommand, Mode=OneWay}"/>
     </Grid>
 </UserControl>

@@ -4,9 +4,17 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI.Views"
+             xmlns:vmodel ="clr-namespace:GUI.ViewModels"
              mc:Ignorable="d" 
              Height="550" Width="790">
+
+    <UserControl.DataContext>
+        <vmodel:ReturnCarViewModel/>
+    </UserControl.DataContext>
+
     <Grid Background="White">
-            
+        <Label Content="{Binding Title}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="Go back" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GoToHomeCommand, Mode=OneWay}"/>
+
     </Grid>
 </UserControl>
