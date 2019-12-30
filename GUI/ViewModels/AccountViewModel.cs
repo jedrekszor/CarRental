@@ -72,11 +72,7 @@ namespace GUI.ViewModels
 
                 if (check)
                 {
-                    DbManager manager = new DbManager();
-
-                    //manager.ClientIfExists znajduje zawsze klienta nawet jak nie istnieje
-                    //wywali się error jak się doda tego samego klienta
-                    if (true)
+                    if (DatabaseManager.IfClientExists(name, surname))
                     {
                         if (!CheckData.CheckName(name) || !CheckData.CheckName(surname))
                         {
@@ -96,14 +92,13 @@ namespace GUI.ViewModels
 
                         if (check)
                         {
-                            manager.UpdateClient(CurrentUserConfig.Id, name, surname, licNo, Int32.Parse(age));
-                            CurrentUserConfig.CurrentUser = manager.GetClient(CurrentUserConfig.Id);
-                            MessageBox.Show("data updated!");
+                            DatabaseManager.UpdateClient(CurrentUserConfig.Id, name, surname, licNo, Int32.Parse(age));
+                            CurrentUserConfig.CurrentUser = DatabaseManager.GetClient(name, surname);
                         }
                     }
                     else
                     {
-                        Alert = "Tick all checkboxes";
+                        Alert = "Such client already exists";
                     }
                 }
                 else

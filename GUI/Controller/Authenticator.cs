@@ -1,4 +1,5 @@
-﻿using DataLayer.Database;
+﻿using DataLayer.Data;
+using DataLayer.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,35 +10,28 @@ namespace GUI.Controller
 {
     public static class Authenticator
     {
-        private static DbManager manager = new DbManager();
-
         public static bool Authenticate(string name, string surname)
         {
-            bool check = manager.ClientIfExists(name, surname);
-
-            if (check)
-            {
-                CurrentUserConfig.CurrentUser = manager.GetClient(name, surname);
-                return true;
-            }
-            else
-                return false;
+            return DatabaseManager.IfClientExists(name, surname);
         }
 
         public static void AdminAccess()
         {
-            bool check = manager.ClientIfExists("admin", "admin");
-            if (check)
+            if (DatabaseManager.IfClientExists("admin", "admin"))
             {
-                CurrentUserConfig.CurrentUser = manager.GetClient("admin", "admin");
+                CurrentUserConfig.CurrentUser = DatabaseManager.GetClient("admin", "admin");
             }
             else
-                CurrentUserConfig.CurrentUser = new DataLayer.Data.Client("admin", "admin", "100000", 25);
+            {
+                Client admin = new Client("admin", "admin", "100000", 100);
+                DatabaseManager.AddClient(admin);
+                CurrentUserConfig.CurrentUser = DatabaseManager.GetClient("admin", "admin");
+            }
         }
 
         public static void Logout()
         {
-            CurrentUserConfig.CurrentUser = new DataLayer.Data.Client();
+            CurrentUserConfig.CurrentUser = new Client();
         }
     }
 }

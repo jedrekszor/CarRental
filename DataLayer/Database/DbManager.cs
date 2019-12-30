@@ -232,7 +232,7 @@ namespace DataLayer.Database
                     Convert.ToString(r["model"]),
                     Convert.ToInt32(r["mileage"]),
                     Convert.ToInt32(r["passengers"]),
-                    Convert.ToSingle(r["price"]));
+                    Convert.ToInt32(r["price"]));
 
                 cars.Add(car);
             }

@@ -5,17 +5,73 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI.Views"
              xmlns:vmodel ="clr-namespace:GUI.ViewModels"
+             xmlns:config ="clr-namespace:GUI.Controller"
+             xmlns:help ="clr-namespace:GUI.Helper"
              mc:Ignorable="d" 
              Height="550" Width="790">
+
+    <UserControl.Resources>
+        <help:ParamConverter x:Key="ParamConverter"/>
+    </UserControl.Resources>
 
     <UserControl.DataContext>
         <vmodel:RentCarViewModel/>
     </UserControl.DataContext>
-    
+
     <Grid Background="White">
-        
+
         <Label Content="{Binding Title}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Button Content="Go back" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GoBackCommand, Mode=OneWay}"/>
+
+        <!--Order summary-->
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="405" Margin="580,94,0,0" Stroke="Black" VerticalAlignment="Top" Width="174"/>
+        <Label Content="4. Confirm order:" HorizontalAlignment="Left" Margin="580,63,0,0" VerticalAlignment="Top"/>
+        <Label Content="Pickup date:" HorizontalAlignment="Left" Margin="590,115,0,0" VerticalAlignment="Top"/>
+        <Label Content="Price:" HorizontalAlignment="Left" Margin="593,184,0,0" VerticalAlignment="Top"/>
+        <Label Content="Brand:" HorizontalAlignment="Left" Margin="592,212,0,0" VerticalAlignment="Top"/>
+        <Label Content="Model:" HorizontalAlignment="Left" Margin="592,241,0,0" VerticalAlignment="Top"/>
+        <Label Content="Passengers:" HorizontalAlignment="Left" Margin="590,270,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding PickupDate}" HorizontalAlignment="Left" Margin="672,115,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding SelectedCar.Price}" HorizontalAlignment="Left" Margin="639,184,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding SelectedCar.Brand, Mode=OneWay}" HorizontalAlignment="Left" Margin="642,212,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding SelectedCar.Model, Mode=OneWay}" HorizontalAlignment="Left" Margin="642,241,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding SelectedCar.Passengers, Mode=OneWay}" HorizontalAlignment="Left" Margin="666,270,0,0" VerticalAlignment="Top"/>
+
+        <!--Client info-->
+        <Label Content="1. Check client data:" HorizontalAlignment="Left" Margin="24,66,0,0" VerticalAlignment="Top"/>
+        <Label Content="Id:" HorizontalAlignment="Left" Margin="24,97,0,0" VerticalAlignment="Top"/>
+        <Label Content="Name:" HorizontalAlignment="Left" Margin="24,123,0,0" VerticalAlignment="Top"/>
+        <Label Content="Surname:" HorizontalAlignment="Left" Margin="24,149,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Path=(config:CurrentUserConfig.Id)}" HorizontalAlignment="Left" Margin="91,97,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.079,0.462"/>
+        <Label Content="{Binding Path=(config:CurrentUserConfig.Name)}" HorizontalAlignment="Left" Margin="91,123,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Path=(config:CurrentUserConfig.Surname)}" HorizontalAlignment="Left" Margin="91,149,0,0" VerticalAlignment="Top"/>
+
+
+        <!--Available cars:-->
+        <ListBox x:Name="selectCar" HorizontalAlignment="Left" Height="405" Margin="180,97,0,0" VerticalAlignment="Top" Width="203" ItemsSource="{Binding FreeCars}" SelectedItem="{Binding SelectedCar}"/>
+        <Label Content="2. Choose car:" HorizontalAlignment="Left" Margin="180,66,0,0" VerticalAlignment="Top" Width="99" RenderTransformOrigin="0.475,0.577"/>
+
+        <!--Datepickers-->
+        <Label Content="3. Choose pickup date:" HorizontalAlignment="Left" Margin="403,66,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="selectPickupDate" HorizontalAlignment="Left" Margin="403,97,0,0" VerticalAlignment="Top" SelectedDate="{Binding PickupDate, Mode=TwoWay}" FirstDayOfWeek="Monday" DisplayDateStart="{Binding Today, Mode=OneWay}" Width="145"/>
+
+        <Label Content="4. Choose return date:" HorizontalAlignment="Left" Margin="403,144,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="selectReturnDate" HorizontalAlignment="Left" Margin="403,175,0,0" VerticalAlignment="Top" SelectedDate="{Binding RetunDate, Mode=TwoWay}" FirstDayOfWeek="Monday" DisplayDateStart="{Binding Today, Mode=OneWay}" Width="145"/>
+
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="606,340,0,0" VerticalAlignment="Top" Width="118" Height="51" Command="{Binding ConfirmCommand, Mode=OneWay}">
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource ParamConverter}">
+                    <Binding ElementName="selectCar" Path="SelectedItem"/>
+                    <Binding ElementName="selectPickupDate" Path="SelectedDate"/>
+                    <Binding ElementName="selectReturnDate" Path="SelectedDate"/>
+                </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
+
+        <!--alerts-->
+        <TextBlock HorizontalAlignment="Left" Height="72" Margin="590,413,0,0" TextWrapping="Wrap" Text="{Binding Alert}" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Return date:" HorizontalAlignment="Left" Margin="590,144,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding RetunDate}" HorizontalAlignment="Left" Margin="672,144,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

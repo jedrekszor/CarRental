@@ -1,0 +1,1 @@
+﻿CREATE TABLE clients(clientId varchar(255), name varchar(255), surname varchar(255), licNo varchar(255), age integer, primary key(clientId));

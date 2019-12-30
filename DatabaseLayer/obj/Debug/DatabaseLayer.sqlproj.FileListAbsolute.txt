@@ -1,0 +1,9 @@
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\bin\Debug\DatabaseLayer.dacpac
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\bin\Debug\DatabaseLayer.dll
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\bin\Debug\DatabaseLayer.pdb
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\obj\Debug\DatabaseLayer.dll
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\obj\Debug\DatabaseLayer.pdb
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\obj\Debug\Model.xml
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\obj\Debug\refactor.xml
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\obj\Debug\postdeploy.sql
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\obj\Debug\predeploy.sql

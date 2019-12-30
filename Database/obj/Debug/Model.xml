@@ -1,0 +1,917 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1045" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="Database.dll" />
+			<Metadata Name="FileName" Value="C:\USERS\DOM\DESKTOP\PROGRAMMINGTECH\CARRENTAL\DATABASE\OBJ\DEBUG\DATABASE.DLL" />
+			<Metadata Name="AssemblyName" Value="Database" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\obj\Debug\Database.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="Polish_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlServerRoleMembership">
+			<Relationship Name="Member">
+				<Entry>
+					<References Name="[LAPTOP-5LG5F5FH\Dom]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Role">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[sysadmin]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlServerRoleMembership">
+			<Relationship Name="Member">
+				<Entry>
+					<References Name="[NT SERVICE\SQLWriter]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Role">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[sysadmin]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlServerRoleMembership">
+			<Relationship Name="Member">
+				<Entry>
+					<References Name="[NT SERVICE\Winmgmt]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Role">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[sysadmin]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlServerRoleMembership">
+			<Relationship Name="Member">
+				<Entry>
+					<References Name="[NT Service\MSSQLSERVER]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Role">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[sysadmin]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlServerRoleMembership">
+			<Relationship Name="Member">
+				<Entry>
+					<References Name="[NT SERVICE\SQLSERVERAGENT]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Role">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[sysadmin]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlEventSession" Name="[AlwaysOn_health]">
+			<Relationship Name="Definitions">
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="alwayson_ddl_executed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="availability_group_lease_expired" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="availability_replica_automatic_failover_validation" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="availability_replica_manager_state_change" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="availability_replica_state" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="availability_replica_state_change" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="hadr_db_partner_set_sync_state" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="lock_redo_blocked" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="error_reported" />
+						<Property Name="WhereExpression">
+							<Value><![CDATA[([error_number]=(9691) OR [error_number]=(35204) OR [error_number]=(9693) OR [error_number]=(26024) OR [error_number]=(28047) OR [error_number]=(26023) OR [error_number]=(9692) OR [error_number]=(28034) OR [error_number]=(28036) OR [error_number]=(28048) OR [error_number]=(28080) OR [error_number]=(28091) OR [error_number]=(26022) OR [error_number]=(9642) OR [error_number]=(35201) OR [error_number]=(35202) OR [error_number]=(35206) OR [error_number]=(35207) OR [error_number]=(26069) OR [error_number]=(26070) OR [error_number]>(41047) AND [error_number]<(41056) OR [error_number]=(41142) OR [error_number]=(41144) OR [error_number]=(1480) OR [error_number]=(823) OR [error_number]=(824) OR [error_number]=(829) OR [error_number]=(35264) OR [error_number]=(35265) OR [error_number]=(41188) OR [error_number]=(41189))]]></Value>
+						</Property>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Targets">
+				<Entry>
+					<Element Type="SqlEventSessionTarget">
+						<Property Name="EventPackageName" Value="package0" />
+						<Property Name="TargetName" Value="event_file" />
+						<Relationship Name="ParameterSettings">
+							<Entry>
+								<Element Type="SqlEventSessionSetting">
+									<Property Name="SettingName" Value="filename" />
+									<Property Name="SettingValue">
+										<Value><![CDATA[N'AlwaysOn_health.xel']]></Value>
+									</Property>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionSetting">
+									<Property Name="SettingName" Value="max_file_size" />
+									<Property Name="SettingValue">
+										<Value><![CDATA[5]]></Value>
+									</Property>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionSetting">
+									<Property Name="SettingName" Value="max_rollover_files" />
+									<Property Name="SettingValue">
+										<Value><![CDATA[4]]></Value>
+									</Property>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		<Element Type="SqlLogin" Name="[LAPTOP-5LG5F5FH\Dom]">
+			<Property Name="IsMappedToWindowsLogin" Value="True" />
+			<Property Name="DefaultLanguage" Value="us_english" />
+			<Property Name="IsCheckPolicyOn" Value="False" />
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		<Element Type="SqlLogin" Name="[NT Service\MSSQLSERVER]">
+			<Property Name="IsMappedToWindowsLogin" Value="True" />
+			<Property Name="DefaultLanguage" Value="us_english" />
+			<Property Name="IsCheckPolicyOn" Value="False" />
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		<Element Type="SqlLogin" Name="[NT SERVICE\SQLSERVERAGENT]">
+			<Property Name="IsMappedToWindowsLogin" Value="True" />
+			<Property Name="DefaultLanguage" Value="us_english" />
+			<Property Name="IsCheckPolicyOn" Value="False" />
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		<Element Type="SqlLogin" Name="[NT SERVICE\SQLTELEMETRY]">
+			<Property Name="IsMappedToWindowsLogin" Value="True" />
+			<Property Name="DefaultLanguage" Value="us_english" />
+			<Property Name="IsCheckPolicyOn" Value="False" />
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		<Element Type="SqlLogin" Name="[NT SERVICE\SQLWriter]">
+			<Property Name="IsMappedToWindowsLogin" Value="True" />
+			<Property Name="DefaultLanguage" Value="us_english" />
+			<Property Name="IsCheckPolicyOn" Value="False" />
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		<Element Type="SqlLogin" Name="[NT SERVICE\Winmgmt]">
+			<Property Name="IsMappedToWindowsLogin" Value="True" />
+			<Property Name="DefaultLanguage" Value="us_english" />
+			<Property Name="IsCheckPolicyOn" Value="False" />
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		<Element Type="SqlEventSession" Name="[QuickSessionTSQL]">
+			<Property Name="MaxMemory" Value="16" />
+			<Property Name="MaxDispatchLatencySeconds" Value="5" />
+			<Property Name="MemoryPartitionMode" Value="2" />
+			<Property Name="IsOnTrackCausality" Value="True" />
+			<Relationship Name="Definitions">
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="existing_connection" />
+						<Relationship Name="Actions">
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="package0" />
+									<Property Name="ActionName" Value="event_sequence" />
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="session_id" />
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="client_hostname" />
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="login" />
+						<Relationship Name="Actions">
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="package0" />
+									<Property Name="ActionName" Value="event_sequence" />
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="session_id" />
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="client_hostname" />
+								</Element>
+							</Entry>
+						</Relationship>
+						<Relationship Name="AttributeSettings">
+							<Entry>
+								<Element Type="SqlEventSessionSetting">
+									<Property Name="SettingName" Value="collect_options_text" />
+									<Property Name="SettingValue">
+										<Value><![CDATA[1]]></Value>
+									</Property>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="logout" />
+						<Relationship Name="Actions">
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="package0" />
+									<Property Name="ActionName" Value="event_sequence" />
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="session_id" />
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="rpc_starting" />
+						<Property Name="WhereExpression">
+							<Value><![CDATA[([package0].[equal_boolean]([sqlserver].[is_system],(0)))]]></Value>
+						</Property>
+						<Relationship Name="Actions">
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="package0" />
+									<Property Name="ActionName" Value="event_sequence" />
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="session_id" />
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="database_name" />
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="sql_batch_starting" />
+						<Property Name="WhereExpression">
+							<Value><![CDATA[([package0].[equal_boolean]([sqlserver].[is_system],(0)))]]></Value>
+						</Property>
+						<Relationship Name="Actions">
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="package0" />
+									<Property Name="ActionName" Value="event_sequence" />
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="session_id" />
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="database_name" />
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		<Element Type="SqlLogin" Name="[sa]">
+			<Property Name="Password" Value="elssyluizkaO:lyoD:oh|pn=msFT7_&amp;#$!~&lt;}zdyc4u|l4Y5" />
+			<Property Name="DefaultLanguage" Value="us_english" />
+			<Property Name="IsDisabled" Value="True" />
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		<Element Type="SqlEventSession" Name="[telemetry_xevents]">
+			<Property Name="MaxDispatchLatencySeconds" Value="120" />
+			<Property Name="IsOnStartupState" Value="True" />
+			<Relationship Name="Definitions">
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="server_start_stop" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="error_reported" />
+						<Property Name="WhereExpression">
+							<Value><![CDATA[([severity]>=(16) OR ([error_number]=(18456) OR [error_number]=(17803) OR [error_number]=(701) OR [error_number]=(802) OR [error_number]=(8645) OR [error_number]=(8651) OR [error_number]=(8657) OR [error_number]=(8902) OR [error_number]=(41354) OR [error_number]=(41355) OR [error_number]=(41367) OR [error_number]=(41384) OR [error_number]=(41336) OR [error_number]=(41309) OR [error_number]=(41312) OR [error_number]=(41313) OR [error_number]=(33065) OR [error_number]=(33066)))]]></Value>
+						</Property>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="missing_column_statistics" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="missing_join_predicate" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="server_memory_change" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_database_disable_completed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_database_enable_completed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_database_reauthorize_completed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_index_reconciliation_codegen_completed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_remote_column_execution_completed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_remote_column_reconciliation_codegen_completed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_remote_index_execution_completed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_codegen_completed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_alter_ddl" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_create_ddl" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_predicate_not_specified" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_predicate_specified" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_remote_creation_completed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_row_migration_results_event" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_row_unmigration_results_event" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_data_reconciliation_results_event" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_unprovision_completed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_validation_error" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_hinted_admin_update_event" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_hinted_admin_delete_event" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_table_query_error" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_remote_error" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="stretch_query_telemetry" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="temporal_ddl_system_versioning" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="temporal_dml_transaction_fail" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="temporal_ddl_period_add" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="temporal_ddl_period_drop" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="temporal_ddl_schema_check_fail" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="data_masking_ddl_column_definition" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="data_masking_traffic" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="data_masking_traffic_masked_only" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="always_encrypted_query_count" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="rls_query_count" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="auto_stats" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="database_cmptlevel_change" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="database_created" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="database_dropped" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="reason_many_foreign_keys_operator_not_used" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="interleaved_exec_status" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="column_store_index_build_low_memory" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="column_store_index_build_throttle" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="columnstore_delete_buffer_flush_failed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="columnstore_delta_rowgroup_closed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="columnstore_index_reorg_failed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="columnstore_log_exception" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="columnstore_rowgroup_merge_failed" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="columnstore_tuple_mover_delete_buffer_truncate_timed_out" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="columnstore_tuple_mover_end_compress" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="query_memory_grant_blocking" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="natively_compiled_module_inefficiency_detected" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="natively_compiled_proc_slow_parameter_passing" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="xtp_alter_table" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="xtp_db_delete_only_mode_updatedhktrimlsn" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="xtp_stgif_container_added" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="xtp_stgif_container_deleted" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="XtpCompile" />
+						<Property Name="EventName" Value="cl_duration" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="XtpEngine" />
+						<Property Name="EventName" Value="xtp_physical_db_restarted" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="XtpEngine" />
+						<Property Name="EventName" Value="xtp_db_delete_only_mode_enter" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="XtpEngine" />
+						<Property Name="EventName" Value="xtp_db_delete_only_mode_update" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="XtpEngine" />
+						<Property Name="EventName" Value="xtp_db_delete_only_mode_exit" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="XtpEngine" />
+						<Property Name="EventName" Value="parallel_alter_stats" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="XtpEngine" />
+						<Property Name="EventName" Value="serial_alter_stats" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="json_function_compiled" />
+						<Relationship Name="Actions">
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="database_id" />
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="string_escape_compiled" />
+						<Relationship Name="Actions">
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="database_id" />
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="window_function_used" />
+						<Relationship Name="Actions">
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="database_id" />
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="sequence_function_used" />
+						<Relationship Name="Actions">
+							<Entry>
+								<Element Type="SqlEventSessionAction">
+									<Property Name="EventPackageName" Value="sqlserver" />
+									<Property Name="ActionName" Value="database_id" />
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="qds" />
+						<Property Name="EventName" Value="query_store_db_diagnostics" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="index_defragmentation" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="create_index_event" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="index_build_error_event" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlEventSessionDefinitions">
+						<Property Name="EventPackageName" Value="sqlserver" />
+						<Property Name="EventName" Value="alter_column_event" />
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Targets">
+				<Entry>
+					<Element Type="SqlEventSessionTarget">
+						<Property Name="EventPackageName" Value="package0" />
+						<Property Name="TargetName" Value="ring_buffer" />
+						<Relationship Name="ParameterSettings">
+							<Entry>
+								<Element Type="SqlEventSessionSetting">
+									<Property Name="SettingName" Value="occurrence_number" />
+									<Property Name="SettingValue">
+										<Value><![CDATA[100]]></Value>
+									</Property>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Annotation Type="GloballyScoped" />
+		</Element>
+		<Element Type="SqlLogin" Name="[ZARZĄDZANIE NT\SYSTEM]">
+			<Property Name="IsMappedToWindowsLogin" Value="True" />
+			<Property Name="DefaultLanguage" Value="us_english" />
+			<Property Name="IsCheckPolicyOn" Value="False" />
+			<Annotation Type="GloballyScoped" />
+		</Element>
+	</Model>
+</DataSchemaModel>

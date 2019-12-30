@@ -81,5 +81,9 @@ namespace LogicLayer
             return Regex.IsMatch(word, @"^[A-Za-z]+$");
         }
         
+        public static bool CheckDates(DateTime pickupDate, DateTime returnDate)
+        {
+            return !Convert.ToBoolean(DateTime.Compare(pickupDate, returnDate));
+        }
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\bin\Debug\Database.dacpac
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\bin\Debug\Database.dll
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\bin\Debug\Database.pdb
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\obj\Debug\Database.sqlprojAssemblyReference.cache
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\obj\Debug\Model.xml
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\obj\Debug\refactor.xml
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\obj\Debug\postdeploy.sql
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\obj\Debug\predeploy.sql
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\obj\Debug\Database.dll
+C:\Users\Dom\Desktop\ProgrammingTech\CarRental\Database\obj\Debug\Database.pdb

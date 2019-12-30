@@ -1,0 +1,1 @@
+﻿CREATE TABLE orders(orderId varchar(255), clientId varchar(255), carId varchar(255), price float, rentDate date, returnDate date, primary key(orderId), foreign key (clientId) references clients(clientId), foreign key (carId) references cars(licenceNo));
