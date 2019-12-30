@@ -55,7 +55,7 @@ namespace GUI.ViewModels
                 
                 if (check)
                 {
-                    DbManager manager = new DbManager();
+//                    DbManager manager = new DbManager();
 
                     //manager.ClientIfExists znajduje zawsze klienta nawet jak nie istnieje
                     //wywali się error jak się doda tego samego klienta
@@ -81,7 +81,7 @@ namespace GUI.ViewModels
                         if (check)
                         {
                             Client newUser = new Client(name, surname, licNo, Int32.Parse(age));
-                            manager.AddClient(newUser);
+                            DbManager.AddClient(newUser);
                             CurrentUserConfig.CurrentUser = newUser;
 
                             Mediator.NotifyColleagues("toHome", true);

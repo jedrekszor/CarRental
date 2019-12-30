@@ -18,6 +18,7 @@ C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\DataLayer\obj\Debug\Da
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\DataLayer\obj\Debug\DataLayer.exe
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\DataLayer\obj\Debug\DataLayer.pdb
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DataLayer\bin\Debug\DataLayer.exe
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DataLayer\bin\Debug\DataLayer.pdb
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DataLayer\bin\Debug\System.Data.SQLite.dll
@@ -29,3 +30,15 @@ C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DataLayer\obj\Debug\DataLayer.exe
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DataLayer\obj\Debug\DataLayer.pdb
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DataLayer\bin\Debug\DataLayer.exe.config
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
+=======
+C:\Users\jedre\Documents\CarRental\DataLayer\bin\Debug\DataLayer.exe
+C:\Users\jedre\Documents\CarRental\DataLayer\bin\Debug\DataLayer.pdb
+C:\Users\jedre\Documents\CarRental\DataLayer\bin\Debug\System.Data.SQLite.dll
+C:\Users\jedre\Documents\CarRental\DataLayer\bin\Debug\System.Data.SQLite.xml
+C:\Users\jedre\Documents\CarRental\DataLayer\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\jedre\Documents\CarRental\DataLayer\obj\Debug\DataLayer.csprojAssemblyReference.cache
+C:\Users\jedre\Documents\CarRental\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\jedre\Documents\CarRental\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+C:\Users\jedre\Documents\CarRental\DataLayer\obj\Debug\DataLayer.exe
+C:\Users\jedre\Documents\CarRental\DataLayer\obj\Debug\DataLayer.pdb
+>>>>>>> f403d439f2162690375ff6a99582a0cd277b622e

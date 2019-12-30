@@ -43,7 +43,11 @@ namespace DataLayer.Data
             {
                 _mileage = value;
                 OnPropertyChanged(nameof(Mileage));
+<<<<<<< HEAD
                 //manager.UpdateCar(_licenceNo, _brand, _model, value, _passengers, _price);
+=======
+                DbManager.UpdateCar(_licenceNo, _brand, _model, value, _passengers, _price);
+>>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
             }
         }
 
@@ -59,7 +63,11 @@ namespace DataLayer.Data
             {
                 _price = value;
                 OnPropertyChanged(nameof(Price));
+<<<<<<< HEAD
                 //manager.UpdateCar(_licenceNo, _brand, _model, _mileage, _passengers, value);
+=======
+                DbManager.UpdateCar(_licenceNo, _brand, _model, _mileage, _passengers, value);
+>>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
             }
         }
 

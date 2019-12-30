@@ -4,17 +4,38 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
+C:\Users\jedre\Documents\CarRental\GUI\obj\Debug\
+=======
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\obj\Debug\
+>>>>>>> 39570efdfa5aad493d19302ea0c25f4994855760
 GUI
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
+C:\Users\jedre\Documents\CarRental\GUI\App.xaml
+10-1427865236
+2685273160
+33-617584107
+20-1044568170
+MainWindow.xaml;Views\AccountView.xaml;Views\CarListView.xaml;Views\ContactUsView.xaml;Views\LoginView.xaml;Views\MainView.xaml;Views\NewUserView.xaml;Views\RentCarView.xaml;Views\ReportAccidentView.xaml;Views\ReturnCarView.xaml;
+=======
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\App.xaml
+<<<<<<< HEAD
 81933274463
 
 30-1847693297
 148-2049018324
 MainWindow.xaml;Views\AccountView.xaml;Views\CarListView.xaml;Views\LoginView.xaml;Views\MainView.xaml;Views\NewUserView.xaml;Views\RentCarView.xaml;Views\ReturnCarView.xaml;
+=======
+9-1120245022
+2504609560
+30636466879
+20-1933887707
+MainWindow.xaml;Views\AccountView.xaml;Views\CarListView.xaml;Views\ContactUsView.xaml;Views\LoginView.xaml;Views\MainView.xaml;Views\NewUserView.xaml;Views\RentCarView.xaml;Views\ReturnCarView.xaml;
+>>>>>>> 39570efdfa5aad493d19302ea0c25f4994855760
+>>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
 
 False
 

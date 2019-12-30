@@ -6,6 +6,11 @@ namespace DataLayer.Data
 {
     public class Order : INotifyPropertyChanged
     {
+<<<<<<< HEAD
+=======
+        //private DbManager manager = new DbManager();
+
+>>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
         private string _orderId;
         private Car _car;
         private Client _client;
@@ -62,7 +67,11 @@ namespace DataLayer.Data
                 _rentDate = value;
 
                 OnPropertyChanged(nameof(RentDate));
+<<<<<<< HEAD
                 //manager.UpdateOrder(_orderId, value, _returnDate, _price);
+=======
+                DbManager.UpdateOrder(_orderId, value, _returnDate, _price);
+>>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
             }
         }
 
@@ -73,7 +82,11 @@ namespace DataLayer.Data
             {
                 _returnDate = value;
                 OnPropertyChanged(nameof(ReturnDate));
+<<<<<<< HEAD
                 //manager.UpdateOrder(_orderId, _rentDate, value, _price);
+=======
+                DbManager.UpdateOrder(_orderId, _rentDate, value, _price);
+>>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
             }
         }
 
@@ -84,7 +97,11 @@ namespace DataLayer.Data
             {
                 _price = value;
                 OnPropertyChanged(nameof(Price));
+<<<<<<< HEAD
                 //manager.UpdateOrder(_orderId, _rentDate, _returnDate, value);
+=======
+                DbManager.UpdateOrder(_orderId, _rentDate, _returnDate, value);
+>>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
             }
         }
         private string GeneratedId()

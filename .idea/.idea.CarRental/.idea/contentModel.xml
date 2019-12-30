@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Dom\.Rider2019.2\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\Dom\.Rider2019.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\Dom\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Dom\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_CarRental.23365171.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Dom\RiderProjects\CarRental" t="IncludeFlat">
+    <e p="C:\Users\jedre\.Rider2019.1\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\jedre\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\jedre\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_CarRental.1726496817.00" t="ExcludeRecursive" />
+    <e p="C:\Users\jedre\Documents\CarRental" t="IncludeFlat">
       <e p="CarRental.sln" t="IncludeFlat" />
       <e p="DataLayer" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -25,8 +24,174 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
       </e>
+      <e p="GUI" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controller" t="Include">
+          <e p="Authenticator.cs" t="Include" />
+          <e p="CarsListConfig.cs" t="Include" />
+          <e p="CurrentUserConfig.cs" t="Include" />
+        </e>
+        <e p="Events" t="Include">
+          <e p="EventArgs.cs" t="Include" />
+          <e p="EventRaiser.cs" t="Include" />
+        </e>
+        <e p="GUI.csproj" t="IncludeRecursive" />
+        <e p="helper" t="Include">
+          <e p="Mediator.cs" t="Include" />
+          <e p="ParamConverter.cs" t="Include" />
+          <e p="PropertyMonitor.cs" t="Include" />
+          <e p="RelayCommand.cs" t="Include" />
+        </e>
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="PageContents" t="Include">
+          <e p="LoginPage.cs" t="Include" />
+          <e p="MainPage.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="AccountViewModel.cs" t="Include" />
+          <e p="CarListViewModel.cs" t="Include" />
+          <e p="ContactUsViewModel.cs" t="Include" />
+          <e p="LoginViewModel.cs" t="Include" />
+          <e p="MainViewModel.cs" t="Include" />
+          <e p="NewUserViewModel.cs" t="Include" />
+          <e p="RentCarViewModel.cs" t="Include" />
+          <e p="WindowViewModel.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="AccountView.xaml" t="Include" />
+          <e p="AccountView.xaml.cs" t="Include" />
+          <e p="CarListView.xaml" t="Include" />
+          <e p="CarListView.xaml.cs" t="Include" />
+          <e p="ContactUsView.xaml" t="Include" />
+          <e p="ContactUsView.xaml.cs" t="Include" />
+          <e p="LoginView.xaml" t="Include" />
+          <e p="LoginView.xaml.cs" t="Include" />
+          <e p="MainView.xaml" t="Include" />
+          <e p="MainView.xaml.cs" t="Include" />
+          <e p="NewUserView.xaml" t="Include" />
+          <e p="NewUserView.xaml.cs" t="Include" />
+          <e p="RentCarView.xaml" t="Include" />
+          <e p="RentCarView.xaml.cs" t="Include" />
+          <e p="ReportAccidentView.xaml" t="Include" />
+          <e p="ReportAccidentView.xaml.cs" t="Include" />
+          <e p="ReturnCarView.xaml" t="Include" />
+          <e p="ReturnCarView.xaml.cs" t="Include" />
+        </e>
+        <e p="x64" t="Include" />
+        <e p="x86" t="Include" />
+      </e>
+      <e p="GUILayerV3" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Command" t="Include">
+          <e p="DelegateCommand.cs" t="Include" />
+        </e>
+        <e p="GUILayerV3.csproj" t="IncludeRecursive" />
+        <e p="helper" t="Include">
+          <e p="Authenticator.cs" t="Include" />
+          <e p="ParameterConverter.cs" t="Include" />
+        </e>
+        <e p="MainWindow.xaml" t="Include" />
+        <e p="MainWindow.xaml.cs" t="Include" />
+        <e p="MainWindowViewModel.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
+        <e p="Pages" t="Include">
+          <e p="HomePage.cs" t="Include" />
+          <e p="LoginPage.cs" t="Include" />
+          <e p="SettingsPage.cs" t="Include" />
+          <e p="StartPage.cs" t="Include" />
+        </e>
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="ViewModelBase.cs" t="Include" />
+        <e p="ViewModels" t="Include">
+          <e p="HomePageViewModel.cs" t="Include" />
+          <e p="LoginPageViewModel.cs" t="Include" />
+          <e p="SettingsPageViewModel.cs" t="Include" />
+          <e p="StartPageViewModel.cs" t="Include" />
+        </e>
+        <e p="Views" t="Include">
+          <e p="HomePageView.xaml" t="Include" />
+          <e p="HomePageView.xaml.cs" t="Include" />
+          <e p="LoginPageView.xaml" t="Include" />
+          <e p="LoginPageView.xaml.cs" t="Include" />
+          <e p="SettingsPageView.xaml" t="Include" />
+          <e p="SettingsPageView.xaml.cs" t="Include" />
+          <e p="StartPageView.xaml" t="Include" />
+          <e p="StartPageView.xaml.cs" t="Include" />
+        </e>
+      </e>
+      <e p="GUILayerV4" t="IncludeRecursive">
+        <e p="App.config" t="Include" />
+        <e p="App.xaml" t="Include" />
+        <e p="App.xaml.cs" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Command" t="Include">
+          <e p="EventArgs.cs" t="Include" />
+          <e p="EventRaiser.cs" t="Include" />
+          <e p="RelayCommand.cs" t="Include" />
+        </e>
+        <e p="GUILayerV4.csproj" t="IncludeRecursive" />
+        <e p="helper" t="Include">
+          <e p="Mediator.cs" t="Include" />
+          <e p="ParamConverter.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive" />
+        <e p="Properties" t="Include">
+          <e p="AssemblyInfo.cs" t="Include" />
+          <e p="Resources.Designer.cs" t="Include" />
+          <e p="Resources.resx" t="Include" />
+          <e p="Settings.Designer.cs" t="Include" />
+          <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="ViewModels" t="Include">
+          <e p="BaseViewModel.cs" t="Include" />
+          <e p="IPageViewModel.cs" t="Include" />
+          <e p="MainWindowViewModel.cs" t="Include" />
+          <e p="PageContent" t="Include">
+            <e p="LoginPage.cs" t="Include" />
+            <e p="MainPage.cs" t="Include" />
+          </e>
+          <e p="PageViewModels" t="Include">
+            <e p="LoginViewModel.cs" t="Include" />
+            <e p="MainViewModel.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Views" t="Include">
+          <e p="MainWindow.xaml" t="Include" />
+          <e p="MainWindow.xaml.cs" t="Include" />
+          <e p="Pages" t="Include">
+            <e p="LoginView.xaml" t="Include" />
+            <e p="LoginView.xaml.cs" t="Include" />
+            <e p="MainView.xaml" t="Include" />
+            <e p="MainView.xaml.cs" t="Include" />
+          </e>
+        </e>
+      </e>
       <e p="LogicLayer" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="CheckData.cs" t="Include" />
         <e p="LogicLayer.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
@@ -34,38 +199,9 @@
           <e p="AssemblyInfo.cs" t="Include" />
         </e>
       </e>
-      <e p="packages" t="ExcludeRecursive" />
-      <e p="PresentationLayer" t="IncludeRecursive">
-        <e p="App.config" t="Include" />
-        <e p="App.xaml" t="Include" />
-        <e p="App.xaml.cs" t="Include" />
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="helper" t="Include">
-          <e p="MyConverter.cs" t="Include" />
-        </e>
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="PresentationLayer.csproj" t="IncludeRecursive" />
-        <e p="Properties" t="Include">
-          <e p="Annotations.cs" t="Include" />
-          <e p="AssemblyInfo.cs" t="Include" />
-          <e p="Resources.Designer.cs" t="Include" />
-          <e p="Resources.resx" t="Include" />
-        </e>
-        <e p="view" t="Include">
-          <e p="LoginWindow.xaml" t="Include" />
-          <e p="LoginWindow.xaml.cs" t="Include" />
-          <e p="MainWindow.xaml" t="Include" />
-          <e p="MainWindow1.xaml.cs" t="Include" />
-        </e>
-        <e p="viewModel" t="Include">
-          <e p="commands" t="Include">
-            <e p="ChangeTextCommand.cs" t="Include" />
-            <e p="LogInCommand.cs" t="Include" />
-          </e>
-          <e p="ViewModelBase.cs" t="Include" />
-          <e p="ViewModelLogin.cs" t="Include" />
-          <e p="ViewModelMain.cs" t="Include" />
-        </e>
+      <e p="packages" t="ExcludeRecursive">
+        <e p="SQLite.3.13.0\runtimes\win7-x64\native\sqlite3.dll" t="Include" />
+        <e p="SQLite.3.13.0\runtimes\win7-x86\native\sqlite3.dll" t="Include" />
       </e>
       <e p="TestDatabase" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
