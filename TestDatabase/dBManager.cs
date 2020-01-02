@@ -16,12 +16,12 @@ namespace TestDatabase
         {
 //            DbManager manager = new DbManager();
 
-            var amountBefore = DbManager.CountAllCars();
-            DbManager.AddCar("test", "brand", "model", 100, 4, 10);
-            var amountAfter = DbManager.CountAllCars();
+            var amountBefore = DatabaseManager.CountAllCars();
+            DatabaseManager.AddCar("test", "brand", "model", 100, 4, 10);
+            var amountAfter = DatabaseManager.CountAllCars();
 
             Assert.Greater(amountAfter, amountBefore);
-            DbManager.RemoveCar("test");
+            DatabaseManager.RemoveCar("test");
         }
 
         // adding car with given object
@@ -30,12 +30,12 @@ namespace TestDatabase
         {
             //DbManager manager = new DbManager();
 
-            var amountBefore = DbManager.CountAllCars();
-            DbManager.AddCar(new Car("test", "brand", "model", 100, 4, 10));
-            var amountAfter = DbManager.CountAllCars();
+            var amountBefore = DatabaseManager.CountAllCars();
+            DatabaseManager.AddCar(new Car("test", "brand", "model", 100, 4, 10));
+            var amountAfter = DatabaseManager.CountAllCars();
 
             Assert.Greater(amountAfter, amountBefore);
-            DbManager.RemoveCar("test");
+            DatabaseManager.RemoveCar("test");
         }
 
         // removing car with given parameters
@@ -43,11 +43,11 @@ namespace TestDatabase
         public void RemovingCarTest()
         {
             //DbManager manager = new DbManager();
-            DbManager.AddCar(new Car("test", "brand", "model", 100, 4, 10));
+            DatabaseManager.AddCar(new Car("test", "brand", "model", 100, 4, 10));
 
-            var amountBefore = DbManager.CountAllCars();
-            DbManager.RemoveCar("test");
-            var amountAfter = DbManager.CountAllCars();
+            var amountBefore = DatabaseManager.CountAllCars();
+            DatabaseManager.RemoveCar("test");
+            var amountAfter = DatabaseManager.CountAllCars();
 
             Assert.Less(amountAfter, amountBefore);
         }
@@ -57,15 +57,15 @@ namespace TestDatabase
         public void GetCarTest()
         {
             //var manager = new DbManager();
-            DbManager.AddCar("testAdd", "brand", "model", 1000, 5, 10);
+            DatabaseManager.AddCar("testAdd", "brand", "model", 1000, 5, 10);
 
-            var car1 = DbManager.GetCar("testAdd");
+            var car1 = DatabaseManager.GetCar("testAdd");
             var car2 = new Car("testAdd", "brand", "model", 1000, 5, 10);
 
             Console.WriteLine(car1.ToString());
             Console.WriteLine(car2.ToString());
 
-            DbManager.RemoveCar("testAdd");
+            DatabaseManager.RemoveCar("testAdd");
 
             Assert.True(car1.Equals(car2));
         }
@@ -75,13 +75,13 @@ namespace TestDatabase
         public void UpdateCarTest()
         {
             //var manager = new DbManager();
-            DbManager.AddCar("test", "brand", "model", 100, 4, 10);
-            DbManager.UpdateCar("test", "brand1", "model1", 110, 5, 11);
+            DatabaseManager.AddCar("test", "brand", "model", 100, 4, 10);
+            DatabaseManager.UpdateCar("test", "brand1", "model1", 110, 5, 11);
 
-            var car1 = DbManager.GetCar("test");
+            var car1 = DatabaseManager.GetCar("test");
             var car2 = new Car("test", "brand1", "model1", 110, 5, 11);
 
-            DbManager.RemoveCar("test");
+            DatabaseManager.RemoveCar("test");
 
             Assert.True(car1.Equals(car2));
         }
@@ -98,12 +98,12 @@ namespace TestDatabase
         {
 //            DbManager manager = new DbManager();
 
-            var amountBefore = DbManager.CountAllClients();
-            DbManager.AddClient("nsli", "name", "surname", "licNo", 25);
-            var amountAfter = DbManager.CountAllClients();
+            var amountBefore = DatabaseManager.CountAllClients();
+            DatabaseManager.AddClient("nsli", "name", "surname", "licNo", 25);
+            var amountAfter = DatabaseManager.CountAllClients();
 
             Assert.Greater(amountAfter, amountBefore);
-            DbManager.RemoveClient("nsli");
+            DatabaseManager.RemoveClient("nsli");
         }
 
         // Adding client with object
@@ -113,11 +113,11 @@ namespace TestDatabase
 //            DbManager manager = new DbManager();
             var client = new Client();
 
-            var amountBefore = DbManager.CountAllClients();
-            DbManager.AddClient(client);
-            var amountAfter = DbManager.CountAllClients();
+            var amountBefore = DatabaseManager.CountAllClients();
+            DatabaseManager.AddClient(client);
+            var amountAfter = DatabaseManager.CountAllClients();
 
-            DbManager.RemoveClient(client.Id);
+            DatabaseManager.RemoveClient(client.Id);
             Assert.Greater(amountAfter, amountBefore);
         }
 
@@ -127,11 +127,11 @@ namespace TestDatabase
         {
 //            DbManager manager = new DbManager();
             var client = new Client();
-            DbManager.AddClient(client);
+            DatabaseManager.AddClient(client);
 
-            var amountBefore = DbManager.CountAllClients();
-            DbManager.RemoveClient(client.Id);
-            var amountAfter = DbManager.CountAllClients();
+            var amountBefore = DatabaseManager.CountAllClients();
+            DatabaseManager.RemoveClient(client.Id);
+            var amountAfter = DatabaseManager.CountAllClients();
 
             Assert.Less(amountAfter, amountBefore);
         }
@@ -143,11 +143,11 @@ namespace TestDatabase
 //            DbManager manager = new DbManager();
             var client = new Client();
 
-            DbManager.AddClient(client);
+            DatabaseManager.AddClient(client);
 
-            var amountBefore = DbManager.CountAllClients();
-            DbManager.RemoveClient(client.Id);
-            var amountAfter = DbManager.CountAllClients();
+            var amountBefore = DatabaseManager.CountAllClients();
+            DatabaseManager.RemoveClient(client.Id);
+            var amountAfter = DatabaseManager.CountAllClients();
 
             Assert.Less(amountAfter, amountBefore);
         }
@@ -158,12 +158,12 @@ namespace TestDatabase
         {
 //            var manager = new DbManager();
 
-            DbManager.AddClient("nsli", "name", "surname", "licNo", 50);
+            DatabaseManager.AddClient("nsli", "name", "surname", "licNo", 50);
 
-            Client client1 = DbManager.GetClient("nsli");
+            Client client1 = DatabaseManager.GetClient("nsli");
             var client2 = new Client("name", "surname", "licNo", 50);
 
-            DbManager.RemoveClient("nsli");
+            DatabaseManager.RemoveClient("nsli");
 
             Assert.True(client1.Equals(client2));
         }
@@ -172,12 +172,12 @@ namespace TestDatabase
         {
 //            var manager = new DbManager();
        
-            DbManager.AddClient("nsli", "name", "surname", "licNo", 50);
+            DatabaseManager.AddClient("nsli", "name", "surname", "licNo", 50);
 
-            Client client1 = DbManager.GetClient("name", "surname");
+            Client client1 = DatabaseManager.GetClient("name", "surname");
             var client2 = new Client("name", "surname", "licNo", 50);
 
-            DbManager.RemoveClient("nsli");
+            DatabaseManager.RemoveClient("nsli");
 
             Assert.True(client1.Equals(client2));
         }
@@ -187,14 +187,14 @@ namespace TestDatabase
         public void UpdateClientTest()
         {
 //            var manager = new DbManager();
-            DbManager.AddClient("nsli", "name", "surname", "licNo", 50);
+            DatabaseManager.AddClient("nsli", "name", "surname", "licNo", 50);
 
-            DbManager.UpdateClient("nsli", "name1", "surname1", "licNo1", 55);
+            DatabaseManager.UpdateClient("nsli", "name1", "surname1", "licNo1", 55);
 
-            var client1 = DbManager.GetClient("nsli");
+            var client1 = DatabaseManager.GetClient("nsli");
             var client2 = new Client("name1", "surname1", "licNo1", 55);
 
-            DbManager.RemoveClient("nsli");
+            DatabaseManager.RemoveClient("nsli");
 
             Assert.True(client1.Equals(client2));
         }
@@ -203,12 +203,12 @@ namespace TestDatabase
         public void ClientIfExistsTest()
         {
 //            var manager = new DbManager();
-            bool check1 = DbManager.ClientIfExists("name", "surname");
+            bool check1 = DatabaseManager.IfClientExists("name", "surname");
 
-            DbManager.AddClient("nsli", "name", "surname", "licNo", 50);
+            DatabaseManager.AddClient("nsli", "name", "surname", "licNo", 50);
 
-            bool check = DbManager.ClientIfExists("name", "surname");
-            DbManager.RemoveClient("nsli");
+            bool check = DatabaseManager.IfClientExists("name", "surname");
+            DatabaseManager.RemoveClient("nsli");
 
             Assert.False(check1);
             Assert.True(check);
@@ -231,9 +231,9 @@ namespace TestDatabase
 
 //            var manager = new DbManager();
 
-            var beforeAmount = DbManager.CountAllOrders();
-            DbManager.AddOrder(order);
-            var afterAmount = DbManager.CountAllOrders();
+            var beforeAmount = DatabaseManager.CountAllOrders();
+            DatabaseManager.AddOrder(order);
+            var afterAmount = DatabaseManager.CountAllOrders();
 
             Assert.Greater(afterAmount, beforeAmount);
         }
@@ -243,9 +243,9 @@ namespace TestDatabase
         {
 //            var manager = new DbManager();
 
-            var beforeAmount = DbManager.CountAllOrders();
-            DbManager.RemoveOrder("nste");
-            var afterAmount = DbManager.CountAllOrders();
+            var beforeAmount = DatabaseManager.CountAllOrders();
+            DatabaseManager.RemoveOrder("nste");
+            var afterAmount = DatabaseManager.CountAllOrders();
 
             Assert.Less(afterAmount, beforeAmount);
         }
@@ -259,15 +259,15 @@ namespace TestDatabase
             Client client = new Client();
             Order order = new Order(car, client, DateTime.Today, DateTime.Today);
 
-            DbManager.AddCar(car);
-            DbManager.AddClient(client);
-            DbManager.AddOrder(order);
+            DatabaseManager.AddCar(car);
+            DatabaseManager.AddClient(client);
+            DatabaseManager.AddOrder(order);
 
-            Order order1 = DbManager.GetOrder(order.OrderId);
+            Order order1 = DatabaseManager.GetOrder(order.OrderId);
 
-            DbManager.RemoveOrder(order);
-            DbManager.RemoveClient(client);
-            DbManager.RemoveCar(car);
+            DatabaseManager.RemoveOrder(order);
+            DatabaseManager.RemoveClient(client);
+            DatabaseManager.RemoveCar(car);
 
             Assert.True(order1.Equals(order));
         }
@@ -284,11 +284,11 @@ namespace TestDatabase
             Car car = new Car();
             Order order = new Order(car, new Client(), DateTime.Today, DateTime.Today);
 
-            bool checkBefore = DbManager.IfNotOccupied(car);
-            DbManager.AddOrder(order);
-            bool checkAfter = DbManager.IfNotOccupied(car);
+            bool checkBefore = DatabaseManager.IfNotOccupied(car);
+            DatabaseManager.AddOrder(order);
+            bool checkAfter = DatabaseManager.IfNotOccupied(car);
 
-            DbManager.RemoveOrder(order);
+            DatabaseManager.RemoveOrder(order);
             Assert.False(checkBefore);
             Assert.True(checkAfter);
         }
@@ -301,11 +301,11 @@ namespace TestDatabase
             Client client = new Client();
             Order order = new Order(new Car(), client, DateTime.Today, DateTime.Today);
 
-            bool checkBefore = DbManager.IfNotOccupied(client);
-            DbManager.AddOrder(order);
-            bool checkAfter = DbManager.IfNotOccupied(client);
+            bool checkBefore = DatabaseManager.IfNotOccupied(client);
+            DatabaseManager.AddOrder(order);
+            bool checkAfter = DatabaseManager.IfNotOccupied(client);
 
-            DbManager.RemoveOrder(order);
+            DatabaseManager.RemoveOrder(order);
             Assert.False(checkBefore);
             Assert.True(checkAfter);
         }

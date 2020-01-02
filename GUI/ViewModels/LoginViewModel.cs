@@ -37,16 +37,16 @@ namespace GUI.ViewModels
                 var name = (string)values[0];
                 var surname = (string)values[1];
 
-                if (Authenticator.Authenticate(name, surname))
-                {
-                    Alert = "";
-                    CurrentUserConfig.CurrentUser = DatabaseManager.GetClient(name, surname);
-                    Mediator.NotifyColleagues("toHome", true);
-                }
-                else
-                {
-                    Alert = "Name or Surname are incorrect!";
-                }
+//                if (Authenticator.Authenticate(name, surname))
+//                {
+//                    Alert = "";
+//                    CurrentUserConfig.CurrentUser = DatabaseManager.GetClient(name, surname);
+//                    Mediator.NotifyColleagues("toHome", true);
+//                }
+//                else
+//                {
+//                    Alert = "Name or Surname are incorrect!";
+//                }
             }
         }
 

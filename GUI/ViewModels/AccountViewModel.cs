@@ -72,43 +72,43 @@ namespace GUI.ViewModels
 
                 if (check)
                 {
-<<<<<<< HEAD
-                    if (DatabaseManager.IfClientExists(name, surname))
-=======
-                    //DbManager manager = new DbManager();
-
-                    //manager.ClientIfExists znajduje zawsze klienta nawet jak nie istnieje
-                    //wywali się error jak się doda tego samego klienta
-                    if (true)
->>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
-                    {
-                        if (!CheckData.CheckName(name) || !CheckData.CheckName(surname))
-                        {
-                            Alert = "Name or surname is incorrect";
-                            check = false;
-                        }
-                        if (!CheckData.CheckLicenceNo(licNo))
-                        {
-                            Alert = "Liecence no is incorrect";
-                            check = false;
-                        }
-                        if (!CheckData.CheckAge(Int32.Parse(age)))
-                        {
-                            Alert = "You must be over 18.";
-                            check = false;
-                        }
-
-                        if (check)
-                        {
-<<<<<<< HEAD
-                            DatabaseManager.UpdateClient(CurrentUserConfig.Id, name, surname, licNo, Int32.Parse(age));
-                            CurrentUserConfig.CurrentUser = DatabaseManager.GetClient(name, surname);
-=======
-                            DbManager.UpdateClient(CurrentUserConfig.Id, name, surname, licNo, Int32.Parse(age));
-                            CurrentUserConfig.CurrentUser = DbManager.GetClient(CurrentUserConfig.Id);
-                            MessageBox.Show("data updated!");
->>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
-                        }
+//<<<<<<< HEAD
+//                    if (DatabaseManager.IfClientExists(name, surname))
+//=======
+//                    //DbManager manager = new DbManager();
+//
+//                    //manager.ClientIfExists znajduje zawsze klienta nawet jak nie istnieje
+//                    //wywali się error jak się doda tego samego klienta
+//                    if (true)
+//>>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
+//                    {
+//                        if (!CheckData.CheckName(name) || !CheckData.CheckName(surname))
+//                        {
+//                            Alert = "Name or surname is incorrect";
+//                            check = false;
+//                        }
+//                        if (!CheckData.CheckLicenceNo(licNo))
+//                        {
+//                            Alert = "Liecence no is incorrect";
+//                            check = false;
+//                        }
+//                        if (!CheckData.CheckAge(Int32.Parse(age)))
+//                        {
+//                            Alert = "You must be over 18.";
+//                            check = false;
+//                        }
+//
+//                        if (check)
+//                        {
+//<<<<<<< HEAD
+//                            DatabaseManager.UpdateClient(CurrentUserConfig.Id, name, surname, licNo, Int32.Parse(age));
+//                            CurrentUserConfig.CurrentUser = DatabaseManager.GetClient(name, surname);
+//=======
+//                            DbManager.UpdateClient(CurrentUserConfig.Id, name, surname, licNo, Int32.Parse(age));
+//                            CurrentUserConfig.CurrentUser = DbManager.GetClient(CurrentUserConfig.Id);
+//                            MessageBox.Show("data updated!");
+//>>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
+//                        }
                     }
                     else
                     {
@@ -121,5 +121,5 @@ namespace GUI.ViewModels
                 }
             }
         }
-    }
+//    }
 }
