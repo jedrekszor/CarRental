@@ -83,7 +83,16 @@ namespace LogicLayer
         
         public static bool CheckDates(DateTime pickupDate, DateTime returnDate)
         {
-            return !Convert.ToBoolean(DateTime.Compare(pickupDate, returnDate));
+            int check = DateTime.Compare(pickupDate, returnDate);
+
+            if (check > 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

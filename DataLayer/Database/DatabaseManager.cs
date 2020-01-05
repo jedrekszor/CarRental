@@ -27,11 +27,8 @@ namespace DataLayer.Database
             }
         }
 
-        //Create tables też można dodać jakby coś sie wysypało
-
-
         #region Car
-        
+
         #region Adding
         public static void AddCar(string licenceNo, string brand, string model, int mileage, int passengers,
             float price)
@@ -40,8 +37,8 @@ namespace DataLayer.Database
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO cars('licenceNo', 'brand', 'model', 'mileage', 'passengers', 'price') VALUES(@licenceNo, @brand, @model, @mileage, @passengers, @price)";
-                
+                command.CommandText = "INSERT INTO cars(licenceNo, brand, model, mileage, passengers, price) VALUES(@licenceNo, @brand, @model, @mileage, @passengers, @price)";
+
                 command.Parameters.AddWithValue("@licenceNo", licenceNo);
                 command.Parameters.AddWithValue("@brand", brand);
                 command.Parameters.AddWithValue("@model", model);
@@ -58,15 +55,15 @@ namespace DataLayer.Database
                 connection.Close();
             }
         }
-        
+
         public static void AddCar(Car car)
         {
             try
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO cars('licenceNo', 'brand', 'model', 'mileage', 'passengers', 'price') VALUES(@licenceNo, @brand, @model, @mileage, @passengers, @price)";
-                
+                command.CommandText = "INSERT INTO cars(licenceNo, brand, model, mileage, passengers, price) VALUES(@licenceNo, @brand, @model, @mileage, @passengers, @price)";
+
                 command.Parameters.AddWithValue("@licenceNo", car.LicenceNo);
                 command.Parameters.AddWithValue("@brand", car.Brand);
                 command.Parameters.AddWithValue("@model", car.Model);
@@ -86,7 +83,7 @@ namespace DataLayer.Database
         #endregion
 
         #region Removing
-        
+
         public static void RemoveCar(string licenceNo)
         {
             try
@@ -107,7 +104,7 @@ namespace DataLayer.Database
             }
         }
 
-        
+
         public static void RemoveCar(Car car)
         {
             try
@@ -129,7 +126,7 @@ namespace DataLayer.Database
         }
 
         #endregion
-        
+
         #region Updating
 
         public static void UpdateCar(string oldLicenceNo, string newBrand, string newModel, int newMileage, int newPassengers, float newPrice)
@@ -139,7 +136,7 @@ namespace DataLayer.Database
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = "UPDATE cars SET brand = @newBrand, model = @newModel, mileage = @newMileage, passengers = @newPassengers, price = @newPrice WHERE licenceNo = @oldLicenceNo";
-                
+
                 command.Parameters.AddWithValue("@oldLicenceNo", oldLicenceNo);
                 command.Parameters.AddWithValue("@newBrand", newBrand);
                 command.Parameters.AddWithValue("@newModel", newModel);
@@ -158,7 +155,7 @@ namespace DataLayer.Database
         }
 
         #endregion
-        
+
         #region Counting
 
         public static int CountAllCars()
@@ -181,9 +178,9 @@ namespace DataLayer.Database
                 return 0;
             }
         }
-        
+
         #endregion
-        
+
         #region Getting
 
         public static Car GetCar(string licenceNo)
@@ -255,8 +252,43 @@ namespace DataLayer.Database
             }
         }
 
+        public static ObservableCollection<Car> GetAvailableCars()
+        {
+            try
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = "select * from cars where licenceNo not in (select carId from orders)";
+                SqlDataReader reader = command.ExecuteReader();
+
+                ObservableCollection<Car> cars = new ObservableCollection<Car>();
+                Car car = null;
+
+                while (reader.Read())
+                {
+                    car = new Car(Convert.ToString(reader["licenceNo"]),
+                    Convert.ToString(reader["brand"]),
+                    Convert.ToString(reader["model"]),
+                    Convert.ToInt32(reader["mileage"]),
+                    Convert.ToInt32(reader["passengers"]),
+                    Convert.ToInt32(reader["price"]));
+
+                    cars.Add(car);
+                }
+                reader.Close();
+                connection.Close();
+
+                return cars;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+                return new ObservableCollection<Car>();
+            }
+        }
+
         #endregion
-        
+
         #endregion
 
         #region Client
@@ -268,7 +300,7 @@ namespace DataLayer.Database
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO clients('clientId', 'name', 'surname', 'licNo', 'age') VALUES(@clientId, @name, @surname, @licNo, @age)";
+                command.CommandText = "INSERT INTO clients(clientId, name, surname, licNo, age) VALUES(@clientId, @name, @surname, @licNo, @age)";
 
                 command.Parameters.AddWithValue("@clientId", client.Id.ToUpper());
                 command.Parameters.AddWithValue("@name", client.Name);
@@ -291,7 +323,7 @@ namespace DataLayer.Database
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO clients('clientId', 'name', 'surname', 'licNo', 'age') VALUES(@clientId, @name, @surname, @licNo, @age)";
+                command.CommandText = "INSERT INTO clients(clientId, name, surname, licNo, age) VALUES(@clientId, @name, @surname, @licNo, @age)";
 
                 command.Parameters.AddWithValue("@clientId", id.ToUpper());
                 command.Parameters.AddWithValue("@name", name);
@@ -309,7 +341,7 @@ namespace DataLayer.Database
             }
         }
         #endregion
-        
+
         #region Removing
 
         public static void RemoveClient(string clientId)
@@ -331,7 +363,7 @@ namespace DataLayer.Database
                 connection.Close();
             }
         }
-        
+
         public static void RemoveClient(Client client)
         {
             try
@@ -351,9 +383,9 @@ namespace DataLayer.Database
                 connection.Close();
             }
         }
-        
+
         #endregion
-        
+
         #region Updating
         public static void UpdateClient(Client client)
         {
@@ -389,7 +421,7 @@ namespace DataLayer.Database
                 command.Parameters.AddWithValue("@clientId", clientId.ToUpper());
                 command.Parameters.AddWithValue("@name", name);
                 command.Parameters.AddWithValue("@surname", surname);
-                command.Parameters.AddWithValue("@licNo", surname);
+                command.Parameters.AddWithValue("@licNo", licNo);
                 command.Parameters.AddWithValue("@age", age);
 
                 command.ExecuteNonQuery();
@@ -402,7 +434,7 @@ namespace DataLayer.Database
             }
         }
         #endregion
-        
+
         #region Counting
         public static int CountAllClients()
         {
@@ -425,7 +457,7 @@ namespace DataLayer.Database
             }
         }
         #endregion
-        
+
         #region Getting
         public static Client GetClient(Client _client)
         {
@@ -492,7 +524,7 @@ namespace DataLayer.Database
                 return new Client();
             }
         }
-        
+
         public static Client GetClient(string clientId)
         {
             try
@@ -528,9 +560,9 @@ namespace DataLayer.Database
         #endregion
 
         #endregion
-        
+
         #region Order
-        
+
         #region Adding
 
         public static void AddOrder(Order order)
@@ -539,15 +571,14 @@ namespace DataLayer.Database
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "INSERT INTO orders('orderId', 'clientId', 'carId', 'price', 'rentDate', 'returnDate') VALUES(@orderId, @clientId, @carId, @price, @rentDate, @returnDate)";
+                command.CommandText = "INSERT INTO orders(orderId, clientId, carId, price, rentDate, returnDate) VALUES(@orderId, @clientId, @carId, @price, @rentDate, @returnDate)";
 
                 command.Parameters.AddWithValue("@orderId", order.OrderId);
                 command.Parameters.AddWithValue("@clientId", order.Client.Id);
                 command.Parameters.AddWithValue("@carId", order.Car.LicenceNo);
                 command.Parameters.AddWithValue("@price", order.Car.Price);
-                string format = "yyyy-MM-dd HH:mm:ss";
-                command.Parameters.AddWithValue("@rentDate", order.RentDate.ToString(format));
-                command.Parameters.AddWithValue("@returnDate", order.ReturnDate.ToString(format));
+                command.Parameters.AddWithValue("@rentDate", order.RentDate);
+                command.Parameters.AddWithValue("@returnDate", order.ReturnDate);
 
                 command.ExecuteNonQuery();
                 connection.Close();
@@ -558,11 +589,11 @@ namespace DataLayer.Database
                 connection.Close();
             }
         }
-        
+
         #endregion
-        
+
         #region Removing
-        
+
         public static void RemoveOrder(string orderId)
         {
             try
@@ -581,7 +612,7 @@ namespace DataLayer.Database
                 connection.Close();
             }
         }
-        
+
         public static void RemoveOrder(Order order)
         {
             try
@@ -600,11 +631,59 @@ namespace DataLayer.Database
                 connection.Close();
             }
         }
-        
+
+        public static Order GetOrder(string name, string surname)
+        {
+            try
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = "select o.* from orders o inner join clients c on o.clientId = c.clientId where c.name = @v_name and c.surname = @v_surname";
+                command.Parameters.AddWithValue("@v_name", name);
+                command.Parameters.AddWithValue("@v_surname", surname);
+
+                string licenceNo = null;
+                string orderId = null;
+                string clientId = null;
+                DateTime rentDate = new DateTime();
+                DateTime returnDate = new DateTime();
+
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    orderId = (string)reader["orderId"];
+                    clientId = (string)reader["clientId"];
+                    licenceNo = (string)reader["carId"];
+                    rentDate = (DateTime)reader["rentDate"];
+                    returnDate = (DateTime)reader["returnDate"];
+                }
+                reader.Close();
+                connection.Close();
+
+                Car car = GetCar(licenceNo);
+                Client client = GetClient(clientId);
+
+                if(car is null && client is null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return new Order(car, client, rentDate, returnDate);
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+                connection.Close();
+                return new Order();
+            }
+        }
+
         #endregion
-        
+
         #region Counting
-        
+
         public static int CountAllOrders()
         {
             try
@@ -625,11 +704,11 @@ namespace DataLayer.Database
                 return 0;
             }
         }
-        
+
         #endregion
-        
+
         #region Getting
-        
+
         public static Order GetOrder(string orderId)
         {
             try
@@ -639,7 +718,7 @@ namespace DataLayer.Database
                 command.CommandText = "select * from orders where orderId = @orderId";
 
                 command.Parameters.AddWithValue("@orderId", orderId);
-                
+
                 var carId = "";
                 var clientId = "";
                 DateTime rentDate = new DateTime();
@@ -658,8 +737,15 @@ namespace DataLayer.Database
                 connection.Close();
                 Car car = GetCar(carId);
                 Client client = GetClient(clientId);
-                
-                return new Order(car, client, rentDate, returnDate);
+
+                if(car == null || client == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return new Order(car, client, rentDate, returnDate);
+                }
             }
             catch (SqlException e)
             {
@@ -668,11 +754,11 @@ namespace DataLayer.Database
                 return null;
             }
         }
-        
+
         #endregion
-        
+
         #region Updating
-        
+
         public static void UpdateOrder(string orderId, DateTime rentDate, DateTime returnDate, float price)
         {
             try
@@ -680,11 +766,10 @@ namespace DataLayer.Database
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = "UPDATE orders SET rentDate = @v_rentDate, returnDate = @v_returnDate, price = @v_price WHERE orderId = @v_orderId";
-                
+
                 command.Parameters.AddWithValue("@v_orderId", orderId);
-                string format = "yyyy-MM-dd HH:mm:ss";
-                command.Parameters.AddWithValue("@v_rentDate", rentDate.ToString(format));
-                command.Parameters.AddWithValue("@v_returnDate", returnDate.ToString(format));
+                command.Parameters.AddWithValue("@v_rentDate", rentDate);
+                command.Parameters.AddWithValue("@v_returnDate", returnDate);
                 command.Parameters.AddWithValue("@v_price", price);
 
                 command.ExecuteNonQuery();
@@ -696,11 +781,42 @@ namespace DataLayer.Database
                 connection.Close();
             }
         }
-        
+
         #endregion
-        
+
+        #region Archiving
+
+        public static void ArchiveOrder(Order order, int distance, double finalPrice, string feedback)
+        {
+            try
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = "INSERT INTO orders_history(orderId, clientId, carId, rentDate, returnDate, distance, finalPrice, feedback) VALUES(@orderId, @clientId, @carId, @rentDate, @returnDate, @distance, @finalPrice, @feedback)";
+
+                command.Parameters.AddWithValue("@orderId", order.OrderId);
+                command.Parameters.AddWithValue("@clientId", order.Client.Id);
+                command.Parameters.AddWithValue("@carId", order.Car.LicenceNo);
+                command.Parameters.AddWithValue("@rentDate", order.RentDate);
+                command.Parameters.AddWithValue("@returnDate", order.ReturnDate);
+                command.Parameters.AddWithValue("@distance", distance);
+                command.Parameters.AddWithValue("@finalPrice", finalPrice);
+                command.Parameters.AddWithValue("@feedback", feedback);
+
+                command.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+                connection.Close();
+            }
+        }
+
         #endregion
-        
+
+        #endregion
+
         #region dataLogic
         public static bool IfClientExists(string name, string surname)
         {
@@ -708,17 +824,15 @@ namespace DataLayer.Database
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "select * from clients where exists (select * from clients where name = @v_name and surname = @v_surname)";
+                command.CommandText = "select * from clients where name = @v_name and surname = @v_surname";
                 command.Parameters.AddWithValue("@v_name", name);
                 command.Parameters.AddWithValue("@v_surname", surname);
 
                 bool check = false;
 
                 SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    check = reader.HasRows;
-                }
+    
+                check = reader.HasRows;
                 reader.Close();
                 connection.Close();
                 return check;
@@ -730,23 +844,47 @@ namespace DataLayer.Database
                 return false;
             }
         }
-        
+
+        public static bool IfClientAttachedToOrder(string name, string surname)
+        {
+            try
+            {
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandText = "select * from orders o inner join clients c on o.clientId = c.clientId where c.name = @v_name && c.surname = @v_surname;";
+                command.Parameters.AddWithValue("@v_name", name);
+                command.Parameters.AddWithValue("@v_surname", surname);
+
+                bool check = false;
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                check = reader.HasRows;
+                reader.Close();
+                connection.Close();
+                return check;
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.Message);
+                connection.Close();
+                return false;
+            }
+        }
+
         public static bool IfNotOccupied(Car car)
         {
             try
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "select * from orders where exists (select * from orders where carId = @v_carId)";
-                command.Parameters.AddWithValue("@v_carId", car.LicenceNo);
+                command.CommandText = "select * from orders where carId = @v_carId";
+                command.Parameters.AddWithValue("@v_carId", car.LicenceNo.ToUpper());
 
-                bool check = false;
+                var reader = command.ExecuteReader();
+                bool check = reader.HasRows;
 
-                var r = command.ExecuteReader();
-                while (r.Read())
-                {
-                    check = r.HasRows;
-                }
+                reader.Close();
                 connection.Close();
                 return check;
             }
@@ -765,15 +903,12 @@ namespace DataLayer.Database
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandText = "select * from orders where exists (select * from orders where clientId = @v_clientId)";
-                command.Parameters.AddWithValue("@v_carId", client.Id);
-
-                bool check = false;
+                command.Parameters.AddWithValue("@v_clientId", client.Id.ToUpper());
 
                 var r = command.ExecuteReader();
-                while (r.Read())
-                {
-                    check = r.HasRows;
-                }
+
+                bool check = r.HasRows;
+
                 connection.Close();
                 return check;
             }
@@ -785,7 +920,7 @@ namespace DataLayer.Database
             }
         }
 
-        
+
         #endregion
     }
 }

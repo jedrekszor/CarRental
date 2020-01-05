@@ -5,8 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GUI.Views"
              xmlns:vmodel ="clr-namespace:GUI.ViewModels"
+             xmlns:help ="clr-namespace:GUI.Helper"
              mc:Ignorable="d" 
              Height="550" Width="790">
+
+    <UserControl.Resources>
+        <help:ParamConverter x:Key="ParamConverter"/>
+    </UserControl.Resources>
 
     <UserControl.DataContext>
         <vmodel:ReturnCarViewModel/>
@@ -14,7 +19,42 @@
 
     <Grid Background="White">
         <Label Content="{Binding Title}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="255" Margin="26,211,0,0" Stroke="Black" VerticalAlignment="Top" Width="741"/>
+        
+        <!--buttons-->
+        <Button Content="Confirm" HorizontalAlignment="Left" Margin="625,394,0,0" VerticalAlignment="Top" Width="126" Height="53" Command="{Binding ConfirmCommand, Mode=OneWay}">
+            <Button.CommandParameter>
+                <MultiBinding Converter="{StaticResource ParamConverter}">
+                    <Binding ElementName="Distance" Path="Text"/>
+                    <Binding ElementName="PickupDate" Path="SelectedDate"/>
+                    <Binding ElementName="Feedback" Path="SelectedItem"/>
+                </MultiBinding>
+            </Button.CommandParameter>
+        </Button>
         <Button Content="Go back" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GoToHomeCommand, Mode=OneWay}"/>
+
+        <!--distance driven-->
+        <TextBox x:Name="Distance" HorizontalAlignment="Left" Height="23" Margin="47,262,0,0" TextWrapping="Wrap" Text="{Binding DistanceDriven}" VerticalAlignment="Top" Width="309"/>
+        <Label Content="Distance driven (km):" HorizontalAlignment="Left" Margin="47,231,0,0" VerticalAlignment="Top"/>
+
+        <!--return date-->
+        <Label Content="Return date:" HorizontalAlignment="Left" Margin="47,303,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="PickupDate" HorizontalAlignment="Left" SelectedDate="{Binding ReturnDate}" Margin="47,334,0,0" VerticalAlignment="Top" Width="309" DisplayDateStart="{Binding Today}"/>
+
+        <!--feedback-->
+        <Label Content="Give us feedback, measure your satisfaction:" HorizontalAlignment="Left" Margin="47,376,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="Feedback" HorizontalAlignment="Left" Margin="47,407,0,0" VerticalAlignment="Top" Width="309" SelectedItem="{Binding Feedback}" ItemsSource="{Binding FeedbackOpts}"/>
+
+        <!--final price-->
+        <Label Content="Final price (zł):" HorizontalAlignment="Left" Margin="625,312,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding FinalPrice}" HorizontalAlignment="Left" Margin="625,342,0,0" VerticalAlignment="Top"/>
+                
+        <!--detailed information-->
+        <TextBlock HorizontalAlignment="Left" Margin="26,72,0,0" TextWrapping="Wrap" Text="Am congue nunc in sem eleifend tempor. Integer venenatis congue enim, vitae maximus ipsum sagittis ac. Donec ut nulla pellentesque, auctor quam quis, accumsan nunc. Integer pellentesque leo ut odio condimentum, non posuere dui consequat. Nulla facilisi. Duis pharetra luctus nibh sed ultricies. Donec venenatis justo a sem rhoncus ullamcorper. Nam id blandit felis. Aenean vitae commodo felis. Pellentesque sodales ultricies leo, eget rhoncus mi rhoncus a." VerticalAlignment="Top" Height="103" Width="461" TextAlignment="Justify"/>
+        
+        <!--logo-->
+        <Label Content="CarRetnal_" HorizontalAlignment="Left" Margin="575,28,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="application" HorizontalAlignment="Left" Margin="653,72,0,0" VerticalAlignment="Top" FontSize="18"/>
 
     </Grid>
 </UserControl>

@@ -31,7 +31,7 @@
         <Label Content="Brand:" HorizontalAlignment="Left" Margin="592,212,0,0" VerticalAlignment="Top"/>
         <Label Content="Model:" HorizontalAlignment="Left" Margin="592,241,0,0" VerticalAlignment="Top"/>
         <Label Content="Passengers:" HorizontalAlignment="Left" Margin="590,270,0,0" VerticalAlignment="Top"/>
-        <Label Content="{Binding PickupDate}" HorizontalAlignment="Left" Margin="672,115,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding PickupDate, StringFormat='dd MMM yyyy'}" HorizontalAlignment="Left" Margin="672,115,0,0" VerticalAlignment="Top"/>
         <Label Content="{Binding SelectedCar.Price}" HorizontalAlignment="Left" Margin="639,184,0,0" VerticalAlignment="Top"/>
         <Label Content="{Binding SelectedCar.Brand, Mode=OneWay}" HorizontalAlignment="Left" Margin="642,212,0,0" VerticalAlignment="Top"/>
         <Label Content="{Binding SelectedCar.Model, Mode=OneWay}" HorizontalAlignment="Left" Margin="642,241,0,0" VerticalAlignment="Top"/>
@@ -71,7 +71,7 @@
         <!--alerts-->
         <TextBlock HorizontalAlignment="Left" Height="72" Margin="590,413,0,0" TextWrapping="Wrap" Text="{Binding Alert}" VerticalAlignment="Top" Width="150"/>
         <Label Content="Return date:" HorizontalAlignment="Left" Margin="590,144,0,0" VerticalAlignment="Top"/>
-        <Label Content="{Binding RetunDate}" HorizontalAlignment="Left" Margin="672,144,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding RetunDate, StringFormat='dd MMM yyyy'}" HorizontalAlignment="Left" Margin="672,144,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

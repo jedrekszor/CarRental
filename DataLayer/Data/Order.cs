@@ -6,7 +6,6 @@ namespace DataLayer.Data
 {
     public class Order : INotifyPropertyChanged
     {
-
         private string _orderId;
         private Car _car;
         private Client _client;
@@ -25,8 +24,8 @@ namespace DataLayer.Data
             _orderId = "unknown";
             _car = new Car();
             _client = new Client();
-            _rentDate = new DateTime();
-            _returnDate = new DateTime();
+            _rentDate = new DateTime(2000, 1, 1);
+            _returnDate = new DateTime(2000, 1, 1);
             _price = 0;
         }
 
@@ -63,9 +62,6 @@ namespace DataLayer.Data
                 _rentDate = value;
 
                 OnPropertyChanged(nameof(RentDate));
-
-                DbManager.UpdateOrder(_orderId, value, _returnDate, _price);
-
             }
         }
 
@@ -76,9 +72,6 @@ namespace DataLayer.Data
             {
                 _returnDate = value;
                 OnPropertyChanged(nameof(ReturnDate));
-
-                DbManager.UpdateOrder(_orderId, _rentDate, value, _price);
-
             }
         }
 
@@ -89,9 +82,6 @@ namespace DataLayer.Data
             {
                 _price = value;
                 OnPropertyChanged(nameof(Price));
-
-                DbManager.UpdateOrder(_orderId, _rentDate, _returnDate, value);
-
             }
         }
         private string GeneratedId()
@@ -118,10 +108,10 @@ namespace DataLayer.Data
         public override string ToString()
         {
             return "\nOrderId: " + _orderId +
-                   "\nCar: " + "\n" + _car.ToString() + "\n" +
+                   "\nCar: " + "\n" + _car + "\n" +
                    "\nClient : " + "\n" + _client + "\n" +
-                   "\nRentDate: " + _rentDate +
-                   "\nReturnDate: " + _returnDate +
+                   "\nRentDate: " + _rentDate.Date +
+                   "\nReturnDate: " + _returnDate.Date +
                    "\nPrice: " + _price;
         }
     }

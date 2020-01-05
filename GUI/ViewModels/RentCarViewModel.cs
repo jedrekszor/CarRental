@@ -1,4 +1,5 @@
 ﻿using DataLayer.Data;
+using DataLayer.Database;
 using GUI.Controller;
 using GUI.Helper;
 using LogicLayer;
@@ -8,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace GUI.ViewModels
@@ -108,17 +110,26 @@ namespace GUI.ViewModels
         {
             Alert = "";
             var values = (object[])o;
+
+            var selectedCar = (Car)values[0];
+            var selectedPickupDate = (DateTime)values[1];
+            var selectedReturnDate = (DateTime)values[2];
+
             if (CheckData.CheckObjectArray(values))
             {
                 if (CheckData.CheckDates(PickupDate, RetunDate))
                 {
-                    //add new order + check if it is good
-                    OrderConfig.CurrOrder = new Order(SelectedCar, CurrentUserConfig.CurrentUser, PickupDate, RetunDate);
+                    Order newOrder = new Order(selectedCar, CurrentUserConfig.CurrentUser, selectedPickupDate, selectedReturnDate);
+                    DatabaseManager.AddOrder(newOrder);                  
+                    OrderConfig.CurrOrder = new Order(selectedCar, CurrentUserConfig.CurrentUser, selectedPickupDate, selectedReturnDate);
+
+                    MessageBox.Show("Summary:\n\n" + OrderConfig.CurrOrder.ToString());
+
                     Mediator.NotifyColleagues("toHome", true);
                 }
                 else
                 {
-                    Alert = "Return date must be at least a the same day as pickup date";
+                    Alert = "Return date must be at least a the same day as pickup date or later.";
                 }
             }
         }

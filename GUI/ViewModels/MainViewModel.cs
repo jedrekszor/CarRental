@@ -1,4 +1,5 @@
-﻿using GUI.Helper;
+﻿using GUI.Controller;
+using GUI.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +19,8 @@ namespace GUI.ViewModels
             GoToLoginCommand = new RelayCommand(o => GoLogin(o));
             GoToAccountCommand = new RelayCommand(o => GoAccount(o));
             GoToCarListCommand = new RelayCommand(o => GoCarList(o));
-            GoToRentCommand = new RelayCommand(o => GoToRent(o));
-            GoToReturnCommand = new RelayCommand(o => GoToReturn(o));
+            GoToRentCommand = new RelayCommand(o => GoToRent(o), o => NoOrder(o));
+            GoToReturnCommand = new RelayCommand(o => GoToReturn(o), o => AnyOrder(o));
         }
 
         public ICommand GoToLoginCommand { get; }
@@ -36,6 +37,16 @@ namespace GUI.ViewModels
                 _title = value;
                 OnPropertyChanged(nameof(Title));
             }
+        }
+
+        //methods checking if oreder is set or not and block renting or returning
+        private bool NoOrder(object o)
+        {
+            return OrderConfig.CurrOrder == null;
+        }
+        private bool AnyOrder(object o)
+        {
+            return OrderConfig.CurrOrder != null;
         }
 
         private void GoLogin(object o)

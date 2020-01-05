@@ -20,6 +20,11 @@ namespace DataLayer.Data
         public string Id
         {
             get => _id;
+            set
+            {
+                _id = value;
+                OnPropertyChanged(nameof(Id));
+            }
         }
 
         public string Name
@@ -28,7 +33,6 @@ namespace DataLayer.Data
             set
             {
                 _name = value;
-                _id = GeneratedId();
                 OnPropertyChanged(nameof(Name));
 
             }
@@ -40,7 +44,6 @@ namespace DataLayer.Data
             set
             {
                 _surname = value;
-                _id = GeneratedId();
                 OnPropertyChanged(nameof(Surname));
             }
         }
@@ -51,7 +54,6 @@ namespace DataLayer.Data
             set
             {
                 _licNo = value;
-                _id = GeneratedId();
                 OnPropertyChanged(nameof(LicNo));
             }
         }

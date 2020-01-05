@@ -37,22 +37,38 @@ namespace GUI.ViewModels
                 var name = (string)values[0];
                 var surname = (string)values[1];
 
-//                if (Authenticator.Authenticate(name, surname))
-//                {
-//                    Alert = "";
-//                    CurrentUserConfig.CurrentUser = DatabaseManager.GetClient(name, surname);
-//                    Mediator.NotifyColleagues("toHome", true);
-//                }
-//                else
-//                {
-//                    Alert = "Name or Surname are incorrect!";
-//                }
+                if (Authenticator.Authenticate(name, surname))
+                {
+                    Alert = "";
+                    CurrentUserConfig.CurrentUser = DatabaseManager.GetClient(name, surname);
+                    if (DatabaseManager.IfClientAttachedToOrder(name, surname))
+                    {
+                        OrderConfig.CurrOrder = DatabaseManager.GetOrder(name, surname);
+                    }
+                    else
+                    {
+                        OrderConfig.CurrOrder = null;
+                    }
+                    Mediator.NotifyColleagues("toHome", true);
+                }
+                else
+                {
+                    Alert = "Name or Surname are incorrect!";
+                }
             }
         }
 
         public void AdminAccess(object o)
         {
             Authenticator.AdminAccess();
+            if (DatabaseManager.IfClientAttachedToOrder("admin", "admin"))
+            {
+                OrderConfig.CurrOrder = DatabaseManager.GetOrder("admin", "admin");
+            }
+            else
+            {
+                OrderConfig.CurrOrder = null;
+            }
             Mediator.NotifyColleagues("toHome", true);
         }
 

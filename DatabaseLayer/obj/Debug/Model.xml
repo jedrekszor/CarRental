@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="DatabaseLayer.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\DOM\DESKTOP\PROGRAMMINGTECH\CARRENTAL\DATABASELAYER\OBJ\DEBUG\DATABASELAYER.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\DOM\DESKTOP\B\CARRENTAL\DATABASELAYER\OBJ\DEBUG\DATABASELAYER.DLL" />
 			<Metadata Name="AssemblyName" Value="DatabaseLayer" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\obj\Debug\DatabaseLayer.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Dom\Desktop\b\CarRental\DatabaseLayer\obj\Debug\DatabaseLayer.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>
@@ -96,7 +96,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[cars].[licenceNo]" />
+								<References Name="[dbo].[orders].[orderId]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -104,7 +104,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[cars]" />
+					<References Name="[dbo].[orders]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
@@ -134,7 +134,7 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[orders].[orderId]" />
+								<References Name="[dbo].[cars].[licenceNo]" />
 							</Entry>
 						</Relationship>
 					</Element>
@@ -142,7 +142,7 @@
 			</Relationship>
 			<Relationship Name="DefiningTable">
 				<Entry>
-					<References Name="[dbo].[orders]" />
+					<References Name="[dbo].[cars]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
@@ -251,7 +251,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="5" />
+			<AttachedAnnotation Disambiguator="7" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[clients]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -448,7 +448,7 @@
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="7" />
+			<AttachedAnnotation Disambiguator="5" />
 			<AttachedAnnotation Disambiguator="3" />
 			<AttachedAnnotation Disambiguator="4" />
 		</Element>

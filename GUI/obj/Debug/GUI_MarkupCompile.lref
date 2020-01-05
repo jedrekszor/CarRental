@@ -1,28 +1,11 @@
-<<<<<<< HEAD
-﻿C:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
-=======
-﻿C:\Users\jedre\Documents\CarRental\GUI\obj\Debug\GeneratedInternalTypeHelper.g.cs
->>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
+﻿
 
-<<<<<<< HEAD
-FC:\Users\jedre\Documents\CarRental\GUI\MainWindow.xaml;;
-FC:\Users\jedre\Documents\CarRental\GUI\Views\AccountView.xaml;;
-FC:\Users\jedre\Documents\CarRental\GUI\Views\CarListView.xaml;;
-FC:\Users\jedre\Documents\CarRental\GUI\Views\ContactUsView.xaml;;
-FC:\Users\jedre\Documents\CarRental\GUI\Views\LoginView.xaml;;
-FC:\Users\jedre\Documents\CarRental\GUI\Views\MainView.xaml;;
-FC:\Users\jedre\Documents\CarRental\GUI\Views\NewUserView.xaml;;
-FC:\Users\jedre\Documents\CarRental\GUI\Views\RentCarView.xaml;;
-FC:\Users\jedre\Documents\CarRental\GUI\Views\ReportAccidentView.xaml;;
-FC:\Users\jedre\Documents\CarRental\GUI\Views\ReturnCarView.xaml;;
-=======
-FC:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\MainWindow.xaml;;
-FC:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\Views\AccountView.xaml;;
-FC:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\Views\CarListView.xaml;;
-FC:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\Views\LoginView.xaml;;
-FC:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\Views\MainView.xaml;;
-FC:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\Views\NewUserView.xaml;;
-FC:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\Views\RentCarView.xaml;;
-FC:\Users\Dom\Desktop\ProgrammingTech\CarRental\GUI\Views\ReturnCarView.xaml;;
->>>>>>> 39570efdfa5aad493d19302ea0c25f4994855760
+FC:\Users\Dom\Desktop\b\CarRental\GUI\MainWindow.xaml;;
+FC:\Users\Dom\Desktop\b\CarRental\GUI\Views\AccountView.xaml;;
+FC:\Users\Dom\Desktop\b\CarRental\GUI\Views\CarListView.xaml;;
+FC:\Users\Dom\Desktop\b\CarRental\GUI\Views\LoginView.xaml;;
+FC:\Users\Dom\Desktop\b\CarRental\GUI\Views\MainView.xaml;;
+FC:\Users\Dom\Desktop\b\CarRental\GUI\Views\NewUserView.xaml;;
+FC:\Users\Dom\Desktop\b\CarRental\GUI\Views\RentCarView.xaml;;
+FC:\Users\Dom\Desktop\b\CarRental\GUI\Views\ReturnCarView.xaml;;
 

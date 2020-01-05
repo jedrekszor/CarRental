@@ -14,8 +14,6 @@ namespace TestDatabase
         [Test]
         public void AddingCarTest()
         {
-//            DbManager manager = new DbManager();
-
             var amountBefore = DatabaseManager.CountAllCars();
             DatabaseManager.AddCar("test", "brand", "model", 100, 4, 10);
             var amountAfter = DatabaseManager.CountAllCars();
@@ -28,8 +26,6 @@ namespace TestDatabase
         [Test]
         public void AddingCarObjTest()
         {
-            //DbManager manager = new DbManager();
-
             var amountBefore = DatabaseManager.CountAllCars();
             DatabaseManager.AddCar(new Car("test", "brand", "model", 100, 4, 10));
             var amountAfter = DatabaseManager.CountAllCars();
@@ -42,7 +38,6 @@ namespace TestDatabase
         [Test]
         public void RemovingCarTest()
         {
-            //DbManager manager = new DbManager();
             DatabaseManager.AddCar(new Car("test", "brand", "model", 100, 4, 10));
 
             var amountBefore = DatabaseManager.CountAllCars();
@@ -56,7 +51,6 @@ namespace TestDatabase
         [Test]
         public void GetCarTest()
         {
-            //var manager = new DbManager();
             DatabaseManager.AddCar("testAdd", "brand", "model", 1000, 5, 10);
 
             var car1 = DatabaseManager.GetCar("testAdd");
@@ -74,7 +68,6 @@ namespace TestDatabase
         [Test]
         public void UpdateCarTest()
         {
-            //var manager = new DbManager();
             DatabaseManager.AddCar("test", "brand", "model", 100, 4, 10);
             DatabaseManager.UpdateCar("test", "brand1", "model1", 110, 5, 11);
 
@@ -96,8 +89,6 @@ namespace TestDatabase
         [Test]
         public void AddingClientTest()
         {
-//            DbManager manager = new DbManager();
-
             var amountBefore = DatabaseManager.CountAllClients();
             DatabaseManager.AddClient("nsli", "name", "surname", "licNo", 25);
             var amountAfter = DatabaseManager.CountAllClients();
@@ -110,7 +101,6 @@ namespace TestDatabase
         [Test]
         public void AddingClientObjTest()
         {
-//            DbManager manager = new DbManager();
             var client = new Client();
 
             var amountBefore = DatabaseManager.CountAllClients();
@@ -125,7 +115,6 @@ namespace TestDatabase
         [Test]
         public void RemovingClientTest()
         {
-//            DbManager manager = new DbManager();
             var client = new Client();
             DatabaseManager.AddClient(client);
 
@@ -140,7 +129,6 @@ namespace TestDatabase
         [Test]
         public void RemovingClientObjTest()
         {
-//            DbManager manager = new DbManager();
             var client = new Client();
 
             DatabaseManager.AddClient(client);
@@ -156,8 +144,6 @@ namespace TestDatabase
         [Test]
         public void GetClientTest()
         {
-//            var manager = new DbManager();
-
             DatabaseManager.AddClient("nsli", "name", "surname", "licNo", 50);
 
             Client client1 = DatabaseManager.GetClient("nsli");
@@ -170,8 +156,6 @@ namespace TestDatabase
 
         public void GetClientNameSurnameTest()
         {
-//            var manager = new DbManager();
-       
             DatabaseManager.AddClient("nsli", "name", "surname", "licNo", 50);
 
             Client client1 = DatabaseManager.GetClient("name", "surname");
@@ -186,7 +170,6 @@ namespace TestDatabase
         [Test]
         public void UpdateClientTest()
         {
-//            var manager = new DbManager();
             DatabaseManager.AddClient("nsli", "name", "surname", "licNo", 50);
 
             DatabaseManager.UpdateClient("nsli", "name1", "surname1", "licNo1", 55);
@@ -202,7 +185,6 @@ namespace TestDatabase
         [Test]
         public void ClientIfExistsTest()
         {
-//            var manager = new DbManager();
             bool check1 = DatabaseManager.IfClientExists("name", "surname");
 
             DatabaseManager.AddClient("nsli", "name", "surname", "licNo", 50);
@@ -229,8 +211,6 @@ namespace TestDatabase
             var client = new Client("name", "surname", "licNo", 50);
             var order = new Order(car, client, date, date);
 
-//            var manager = new DbManager();
-
             var beforeAmount = DatabaseManager.CountAllOrders();
             DatabaseManager.AddOrder(order);
             var afterAmount = DatabaseManager.CountAllOrders();
@@ -241,8 +221,6 @@ namespace TestDatabase
         [Test]
         public void RemoveOrderTest()
         {
-//            var manager = new DbManager();
-
             var beforeAmount = DatabaseManager.CountAllOrders();
             DatabaseManager.RemoveOrder("nste");
             var afterAmount = DatabaseManager.CountAllOrders();
@@ -253,8 +231,6 @@ namespace TestDatabase
         [Test]
         public void GettingOrderTest()
         {
-//            DbManager manager = new DbManager();
-
             Car car = new Car();
             Client client = new Client();
             Order order = new Order(car, client, DateTime.Today, DateTime.Today);
@@ -279,8 +255,6 @@ namespace TestDatabase
         [Test]
         public void IfNotOccupiedCarCheck()
         {
-//            DbManager manager = new DbManager();
-
             Car car = new Car();
             Order order = new Order(car, new Client(), DateTime.Today, DateTime.Today);
 
@@ -295,9 +269,7 @@ namespace TestDatabase
 
         [Test]
         public void IfNotOccupiedClientCheck()
-        {
-//            DbManager manager = new DbManager();
-
+        { 
             Client client = new Client();
             Order order = new Order(new Car(), client, DateTime.Today, DateTime.Today);
 

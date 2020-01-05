@@ -17,21 +17,7 @@ namespace GUI.Controller
         static CarsConfig()
         {
             Cars = DatabaseManager.GetCars();
-            FreeCars = DatabaseManager.GetCars();
-        }
-
-        private static ObservableCollection<Car> InitializeCars()
-        {
-            return new ObservableCollection<Car>()
-            {
-                new Car(),
-                new Car(),
-                new Car(),
-                new Car(),
-                new Car(),
-                new Car(),
-                new Car()
-            };
+            FreeCars = DatabaseManager.GetAvailableCars();
         }
 
         public static ObservableCollection<Car> Cars

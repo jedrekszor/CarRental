@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DatabaseManager.cs" />
-    <Compile Include="Database\DbManager.cs" />
     <Compile Include="Data\Car.cs" />
     <Compile Include="Data\Client.cs" />
     <Compile Include="Data\Order.cs" />

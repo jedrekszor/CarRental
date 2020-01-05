@@ -26,7 +26,6 @@ C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\TestDatabase\obj\Debug
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\TestDatabase\obj\Debug\TestDatabase.csproj.CopyComplete
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\TestDatabase\obj\Debug\TestDatabase.dll
 C:\Users\Dom\Desktop\ProgrammingTech\ProgTech\CarRentalV2\TestDatabase\obj\Debug\TestDatabase.pdb
-<<<<<<< HEAD
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\TestDatabase\bin\Debug\TestDatabase.dll
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\TestDatabase\bin\Debug\TestDatabase.pdb
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\TestDatabase\bin\Debug\DataLayer.exe
@@ -42,19 +41,18 @@ C:\Users\Dom\Desktop\ProgrammingTech\CarRental\TestDatabase\obj\Debug\TestDataba
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\TestDatabase\obj\Debug\TestDatabase.dll
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\TestDatabase\obj\Debug\TestDatabase.pdb
 C:\Users\Dom\Desktop\ProgrammingTech\CarRental\TestDatabase\bin\Debug\DataLayer.exe.config
-=======
-C:\Users\jedre\Documents\CarRental\TestDatabase\bin\Debug\TestDatabase.dll
-C:\Users\jedre\Documents\CarRental\TestDatabase\bin\Debug\TestDatabase.pdb
-C:\Users\jedre\Documents\CarRental\TestDatabase\bin\Debug\DataLayer.exe
-C:\Users\jedre\Documents\CarRental\TestDatabase\bin\Debug\nunit.framework.dll
-C:\Users\jedre\Documents\CarRental\TestDatabase\bin\Debug\System.Data.SQLite.dll
-C:\Users\jedre\Documents\CarRental\TestDatabase\bin\Debug\DataLayer.pdb
-C:\Users\jedre\Documents\CarRental\TestDatabase\bin\Debug\System.Data.SQLite.xml
-C:\Users\jedre\Documents\CarRental\TestDatabase\bin\Debug\System.Data.SQLite.dll.config
-C:\Users\jedre\Documents\CarRental\TestDatabase\bin\Debug\nunit.framework.xml
-C:\Users\jedre\Documents\CarRental\TestDatabase\obj\Debug\TestDatabase.csprojAssemblyReference.cache
-C:\Users\jedre\Documents\CarRental\TestDatabase\obj\Debug\TestDatabase.csproj.CoreCompileInputs.cache
-C:\Users\jedre\Documents\CarRental\TestDatabase\obj\Debug\TestDatabase.csproj.CopyComplete
-C:\Users\jedre\Documents\CarRental\TestDatabase\obj\Debug\TestDatabase.dll
-C:\Users\jedre\Documents\CarRental\TestDatabase\obj\Debug\TestDatabase.pdb
->>>>>>> f403d439f2162690375ff6a99582a0cd277b622e
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\bin\Debug\TestDatabase.dll
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\bin\Debug\TestDatabase.pdb
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\bin\Debug\DataLayer.exe
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\bin\Debug\nunit.framework.dll
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\bin\Debug\System.Data.SQLite.dll
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\bin\Debug\DataLayer.pdb
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\bin\Debug\DataLayer.exe.config
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\bin\Debug\System.Data.SQLite.xml
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\bin\Debug\nunit.framework.xml
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\obj\Debug\TestDatabase.csprojAssemblyReference.cache
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\obj\Debug\TestDatabase.csproj.CoreCompileInputs.cache
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\obj\Debug\TestDatabase.csproj.CopyComplete
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\obj\Debug\TestDatabase.dll
+C:\Users\Dom\Desktop\b\CarRental\TestDatabase\obj\Debug\TestDatabase.pdb

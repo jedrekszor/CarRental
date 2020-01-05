@@ -55,41 +55,43 @@ namespace GUI.ViewModels
                 
                 if (check)
                 {
-//                    DbManager manager = new DbManager();
-
-                    //manager.ClientIfExists znajduje zawsze klienta nawet jak nie istnieje
-                    //wywali się error jak się doda tego samego klienta
-
-                    if (CheckBox1 == true && CheckBox2 == true)
+                    if (!DatabaseManager.IfClientExists(name, surname))
                     {
-                        if (!CheckData.CheckName(name) || !CheckData.CheckName(surname))
+                        if (CheckBox1 == true && CheckBox2 == true)
                         {
-                            Alert = "Name or surname is incorrect";
-                            check = false;
-                        }
-                        if (!CheckData.CheckLicenceNo(licNo))
-                        {
-                            Alert = "Liecence no is incorrect";
-                            check = false;
-                        }
-                        if (!CheckData.CheckAge(Int32.Parse(age)))
-                        {
-                            Alert = "You must be over 18.";
-                            check = false;
-                        }
+                            if (!CheckData.CheckName(name) || !CheckData.CheckName(surname))
+                            {
+                                Alert = "Name or surname is incorrect";
+                                check = false;
+                            }
+                            if (!CheckData.CheckLicenceNo(licNo))
+                            {
+                                Alert = "Liecence no is incorrect";
+                                check = false;
+                            }
+                            if (!CheckData.CheckAge(Int32.Parse(age)))
+                            {
+                                Alert = "You must be over 18.";
+                                check = false;
+                            }
 
-                        if (check)
-                        {
-                            Client newUser = new Client(name, surname, licNo, Int32.Parse(age));
-                            DbManager.AddClient(newUser);
-                            CurrentUserConfig.CurrentUser = newUser;
+                            if (check)
+                            {
+                                Client newUser = new Client(name, surname, licNo, Int32.Parse(age));
+                                DatabaseManager.AddClient(newUser);
+                                CurrentUserConfig.CurrentUser = DatabaseManager.GetClient(newUser.Id);
 
-                            Mediator.NotifyColleagues("toHome", true);
+                                Mediator.NotifyColleagues("toHome", true);
+                            }
+                        }
+                        else
+                        {
+                            Alert = "Tick all checkboxes";
                         }
                     }
                     else
                     {
-                        Alert = "Tick all checkboxes";
+                        Alert = "Such client already exists";
                     }
                 }
                 else

@@ -37,36 +37,17 @@ namespace TestDataLayer
         public void SetterMileageTest()
         {
             Car car = new Car("test1", "brand", "model", 10, 5, 10);
-//            DbManager manager = new DbManager();
-
-            //constraint fail prevention
-            DbManager.RemoveCar(car);
-
-            DbManager.AddCar(car);
             car.Mileage = 60;
-
             Assert.AreEqual(60, car.Mileage);
-            Assert.AreEqual(60, DbManager.GetCar("test1").Mileage);
 
-            DbManager.RemoveCar(car);
         }
 
         [Test]
         public void SetterPriceTest()
         {
             Car car = new Car("test1", "brand", "model", 10, 5, 10);
-//            DbManager manager = new DbManager();
-
-            //constraint fail prevention
-            DbManager.RemoveCar(car);
-
-            DbManager.AddCar(car);
             car.Price = 60;
-
             Assert.AreEqual(60, car.Price);
-            Assert.AreEqual(60, DbManager.GetCar("test1").Price);
-
-            DbManager.RemoveCar(car);
         }
 
         [Test]
