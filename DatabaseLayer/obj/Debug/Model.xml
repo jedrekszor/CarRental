@@ -12,7 +12,7 @@
 		</CustomData>
 		<CustomData Category="Reference" Type="Assembly">
 			<Metadata Name="LogicalName" Value="DatabaseLayer.dll" />
-			<Metadata Name="FileName" Value="C:\USERS\DOM\DESKTOP\B\CARRENTAL\DATABASELAYER\OBJ\DEBUG\DATABASELAYER.DLL" />
+			<Metadata Name="FileName" Value="C:\USERS\DOM\DESKTOP\PROGRAMMINGTECH\CARRENTAL\DATABASELAYER\OBJ\DEBUG\DATABASELAYER.DLL" />
 			<Metadata Name="AssemblyName" Value="DatabaseLayer" />
 			<Metadata Name="PermissionSet" Value="SAFE" />
 			<Metadata Name="Owner" Value="" />
@@ -20,7 +20,7 @@
 			<Metadata Name="IsVisible" Value="True" />
 			<Metadata Name="IsModelAware" Value="True" />
 			<Metadata Name="SkipCreationIfEmpty" Value="True" />
-			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Dom\Desktop\b\CarRental\DatabaseLayer\obj\Debug\DatabaseLayer.pdb" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\Dom\Desktop\ProgrammingTech\CarRental\DatabaseLayer\obj\Debug\DatabaseLayer.pdb" />
 		</CustomData>
 		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
 	</Header>

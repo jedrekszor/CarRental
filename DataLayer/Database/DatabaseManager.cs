@@ -851,7 +851,7 @@ namespace DataLayer.Database
             {
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
-                command.CommandText = "select * from orders o inner join clients c on o.clientId = c.clientId where c.name = @v_name && c.surname = @v_surname;";
+                command.CommandText = "select * from orders o inner join clients c on o.clientId = c.clientId where c.name = @v_name and c.surname = @v_surname";
                 command.Parameters.AddWithValue("@v_name", name);
                 command.Parameters.AddWithValue("@v_surname", surname);
 

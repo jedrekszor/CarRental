@@ -21,12 +21,12 @@ namespace DataLayer.Data
 
         public Order()
         {
-            _orderId = "unknown";
             _car = new Car();
             _client = new Client();
             _rentDate = new DateTime(2000, 1, 1);
             _returnDate = new DateTime(2000, 1, 1);
             _price = 0;
+            _orderId = GeneratedId();
         }
 
         public Order(Car car, Client client, DateTime rentDate, DateTime returnDate)

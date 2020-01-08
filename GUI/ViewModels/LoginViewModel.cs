@@ -41,14 +41,8 @@ namespace GUI.ViewModels
                 {
                     Alert = "";
                     CurrentUserConfig.CurrentUser = DatabaseManager.GetClient(name, surname);
-                    if (DatabaseManager.IfClientAttachedToOrder(name, surname))
-                    {
-                        OrderConfig.CurrOrder = DatabaseManager.GetOrder(name, surname);
-                    }
-                    else
-                    {
-                        OrderConfig.CurrOrder = null;
-                    }
+                    
+                    OrderConfig.CurrOrder = Authenticator.GetClientsOrder();
                     Mediator.NotifyColleagues("toHome", true);
                 }
                 else
@@ -61,14 +55,8 @@ namespace GUI.ViewModels
         public void AdminAccess(object o)
         {
             Authenticator.AdminAccess();
-            if (DatabaseManager.IfClientAttachedToOrder("admin", "admin"))
-            {
-                OrderConfig.CurrOrder = DatabaseManager.GetOrder("admin", "admin");
-            }
-            else
-            {
-                OrderConfig.CurrOrder = null;
-            }
+            OrderConfig.CurrOrder = Authenticator.GetClientsOrder();
+
             Mediator.NotifyColleagues("toHome", true);
         }
 

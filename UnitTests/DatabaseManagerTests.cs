@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows;
 using DataLayer.Data;
 using DataLayer.Database;
@@ -300,6 +301,31 @@ namespace UnitTests
         {
             Order order = new Order();
             DatabaseManager.ArchiveOrder(order, 1000, 1500, "gut");
+        }
+
+        [TestMethod]
+        public void GetOrderTest()
+        {
+            Order order = new Order();
+            Car car = new Car();
+            Client client = new Client();
+
+            DatabaseManager.RemoveOrder(order);
+            DatabaseManager.RemoveCar(car);
+            DatabaseManager.RemoveClient(client);
+
+            DatabaseManager.AddCar(car);
+            DatabaseManager.AddClient(new Client());
+            DatabaseManager.AddOrder(order);
+
+            Order order1 = DatabaseManager.GetOrder(order.Client.Name, order.Client.Surname);
+
+            DatabaseManager.RemoveOrder(order);
+            DatabaseManager.RemoveCar(car);
+            DatabaseManager.RemoveClient(client);
+
+            Assert.IsTrue(order.Equals(order1));
+
         }
     }
 }

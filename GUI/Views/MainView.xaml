@@ -43,7 +43,7 @@
         <Label Content="Serch for your best car:" HorizontalAlignment="Left" Margin="472,457,0,0" VerticalAlignment="Top"/>
 
         <!--logo-->
-        <Label Content="CarRetnal_" HorizontalAlignment="Left" Margin="444,32,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="CarRental_" HorizontalAlignment="Left" Margin="444,32,0,0" VerticalAlignment="Top" FontSize="36"/>
         <Label Content="application" HorizontalAlignment="Left" Margin="522,76,0,0" VerticalAlignment="Top" FontSize="18"/>
 
         <Grid Visibility="{Binding Path=(config:OrderConfig.OrderVisibility)}" HorizontalAlignment="Left" Height="474" Margin="10,41,0,0" VerticalAlignment="Top" Width="307">

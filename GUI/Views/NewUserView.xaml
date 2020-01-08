@@ -51,7 +51,7 @@
         <TextBlock HorizontalAlignment="Left" Height="257" Margin="422,165,0,0" TextWrapping="Wrap" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porttitor odio vel ex dictum facilisis. Praesent nisl orci, laoreet in sem ac, iaculis efficitur lacus. Sed vehicula erat vel ipsum lobortis viverra. Nulla id tempus magna. Nullam faucibus augue a augue convallis interdum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut tempor scelerisque metus. Quisque ut erat consequat, vulputate metus vitae, facilisis nunc. Donec sit amet porta leo, sed aliquam lectus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus id mauris purus. Integer commodo dui vitae tellus faucibus interdum quis eget turpis. Fusce quis gravida purus. Aliquam ut massa nec lorem vestibulum scelerisque." VerticalAlignment="Top" Width="294" TextAlignment="Justify"/>
 
         <Label Content="{Binding Alert}" HorizontalAlignment="Left" Margin="137,396,0,0" VerticalAlignment="Top"/>
-        <Label Content="CarRetnal_" HorizontalAlignment="Left" Margin="316,47,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="CarRental_" HorizontalAlignment="Left" Margin="316,47,0,0" VerticalAlignment="Top" FontSize="36"/>
         <Label Content="application" HorizontalAlignment="Left" Margin="395,91,0,0" VerticalAlignment="Top" FontSize="18"/>
 
     </Grid>

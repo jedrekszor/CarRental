@@ -39,7 +39,7 @@
         <Button Content="Sign up" HorizontalAlignment="Left" Margin="364,459,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GoToNewUserCommand, Mode=OneWay}"/>
         <Button Content="Admin" HorizontalAlignment="Left" Margin="364,498,0,0" VerticalAlignment="Top" Width="75" Command="{Binding GoToMainCommandAdmin, Mode=OneWay}"/>
 
-        <Label Content="CarRetnal_" HorizontalAlignment="Left" Margin="311,98,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="CarRental_" HorizontalAlignment="Left" Margin="311,98,0,0" VerticalAlignment="Top" FontSize="36"/>
         <Label Content="application" HorizontalAlignment="Left" Margin="390,142,0,0" VerticalAlignment="Top" FontSize="18"/>
 
         <Label Content="Jędrzej Szor" HorizontalAlignment="Left" Margin="651,487,0,0" VerticalAlignment="Top"/>
